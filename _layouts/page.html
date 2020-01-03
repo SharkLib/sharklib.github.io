@@ -1,7 +1,10 @@
 ---
 layout: default
+css: ["page.css"]
 ---
-{{ content }}
-{% include toc.html %}
-{% include permalinks.html %}
-{% include tags.html %}
+<div id="page-info">
+  <h3>{{page.title}}</h3>
+</div>
+<div class="row">
+  {{ content }}
+</div>

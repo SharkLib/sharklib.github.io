@@ -1,54 +1,68 @@
-# Docsy Jekyll Theme
+# MatJek
 
-[![CircleCI](https://circleci.com/gh/vsoch/docsy-jekyll/tree/master.svg?style=svg)](https://circleci.com/gh/vsoch/docsy-jekyll/tree/master)
-<a href="https://jekyll-themes.com/docsy-jekyll/">
-    <img src="https://img.shields.io/badge/featured%20on-JT-red.svg" height="20" alt="Jekyll Themes Shield" >
-</a>
+A responsive [Material](https://material.io/) theme based on [Materialize.css](http://materializecss.com/) for jekyll sites.
 
-![https://raw.githubusercontent.com/vsoch/docsy-jekyll/master/assets/img/docsy-jekyll.png](https://raw.githubusercontent.com/vsoch/docsy-jekyll/master/assets/img/docsy-jekyll.png)
+## Features
 
-This is a [starter template](https://vsoch.github.com/docsy-jekyll/) for a Docsy jekyll theme, based
-on the Beautiful [Docsy](https://github.com/google/docsy) that renders with Hugo. This version is intended for
-native deployment on GitHub pages. The original [Apache License](https://github.com/vsoch/docsy-jekyll/blob/master/LICENSE) is included.
+* Google Analytics
+* Disqus
+* [GitHub project page](https://shawnteoh.github.io/matjek/projects/)
+* [Tags](https://shawnteoh.github.io/matjek/tags/) and [Categories](https://shawnteoh.github.io/matjek/categories/)
+* Modular CSS and JS includes ([example](https://github.com/ShawnTeoh/matjek/blob/gh-pages/projects.md/))
+* [Fancy "About" page](https://shawnteoh.github.io/matjek/about)
 
-## Changes
+## Installation
 
-The site is intended for purely documentation, so while the front page banner
-is useful for business or similar, this author (@vsoch) preferred to have
-the main site page go directly to the Documentation view. Posts
-are still provided via a feed.
+Clone or fork this repo and edit `_config.yml` as needed.
 
-## Usage
+## Configuration
 
-### 1. Get the code
+Most of the configurations can be found in `_config.yml`. The configurations listed below are specific to MatJek. If you are not using `google_tracking_id` or `disqus_shortname`, just remove them completely.
 
-You can clone the repository right to where you want to host the docs:
-
-```bash
-git clone https://github.com/vsoch/docsy-jekyll.git docs
-cd docs
+```yaml
+github_profile: "github_profile_url"
+user: "your_name" # Appears at sidebar
+user_email: "your_email" # Appears at sidebar, remove whole variable if unwanted
+contact_url: "google_form_link"
+google_tracking_id: "google_analytics_ID"
+disqus_shortname: "shortname_given_by_Disqus"
 ```
 
-### 2. Customize
+Edit the images in `assets/res` to suit your liking, but try to stick to the original resolutions.
 
-To edit configuration values, customize the [_config.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_config.yml).
-To add pages, write them into the [pages](https://github.com/vsoch/docsy-jekyll/blob/master/pages) folder. 
-You define urls based on the `permalink` attribute in your pages,
-and then add them to the navigation by adding to the content of [_data/toc.myl](https://github.com/vsoch/docsy-jekyll/blob/master/_data/toc.yml).
-The top navigation is controlled by [_data/navigation.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_data/navigation.yml)
+If you would like to enable comments in a post (disqus_shortname must be provided), add this line to the front matter of the post.
 
-### 3. Options
-
-Most of the configuration values in the [_config.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_config.yml) are self explanatory,
-and for more details, see the [getting started page](https://vsoch.github.io/docsy-jekyll/docs/getting-started)
-rendered on the site.
-
-### 4. Serve
-
-Depending on how you installed jekyll:
-
-```bash
-jekyll serve
-# or
-bundle exec jekyll serve
+```yaml
+comments: 1
 ```
+
+Add tags and categories to your posts in the front matter as well. Multiple tags/categories can be assigned but need to be separated by spaces.
+
+```yaml
+categories: default default2
+tags: test test2
+```
+
+## Contributing
+
+Bug reports and pull requests are welcomed on GitHub at https://github.com/shawnteoh/matjek. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## Development
+
+To set up your environment to develop this theme, clone/fork the repo and run `bundle install`.
+
+To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000/matjek/`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+
+## License
+
+The theme is available as open source under the terms of the [GPL v3 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+## Libraries
+* [Materialize.css](http://materializecss.com/)
+* [GeoPattern](https://github.com/btmills/geopattern/)
+* [Animate.css](https://daneden.github.io/animate.css/)
+* [Morphtext](http://morphext.fyianlai.com/)
+
+## References
+* https://github.com/DONGChuan/Yummy-Jekyll/
+* https://github.com/codinfox/codinfox-lanyon/

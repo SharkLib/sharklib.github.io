@@ -1,30 +1,43 @@
-<footer class="bg-dark py-5 row d-print-none">
-  <div class="container-fluid mx-sm-5">
-    <div class="row">
-      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
-        
-{% if site.twitter %}<ul class="list-inline mb-0">  
-  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
-    <a class="text-white" target="_blank" href="https://twitter.com/{{ site.twitter }}">
-      <i class="fab fa-twitter"></i>
-    </a>
-  </li>
-</ul>{% endif %}
-</div>
-<div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
-<ul class="list-inline mb-0">  
-  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="" aria-label="GitHub" data-original-title="GitHub">
-    <a class="text-white" target="_blank" href="{{ site.repo }}">
-      <i class="fab fa-github"></i>
-    </a>
-  </li>
-</ul>
-</div>
-<div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-  <small class="text-white">© 2019 {{ site.author }} All Rights Reserved</small>
-  {% if site.privacy %}<small class="ml-1"><a href="{{ site.privacy }}" target="_blank">Privacy Policy</a></small>{% endif %}
-  <p class="mt-2"><a href="/about/">About Docsy</a></p>	
+    </main>
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <img src="{{site.baseurl}}/assets/res/logo.png" alt="logo"/>
+            <p class="grey-text text-lighten-4">{{site.description}}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</footer>
+      <div class="footer-copyright">
+        <div class="container">
+          &#xA9; {{"now" | date: "%Y"}} {{site.title}}. All rights reserved. Powered by <a href="https://github.com/ShawnTeoh/matjek">MatJek</a>.
+        </div>
+      </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    {% for js in layout.js %}
+    {% if js contains "//" %}
+    <script src="{{js}}"></script>
+    {% else %}
+    <script src="{{site.baseurl}}/assets/js/{{js}}"></script>
+    {% endif %}
+    {% endfor %}
+    {% for js in page.js %}
+    {% if js contains "//" %}
+    <script src="{{js}}"></script>
+    {% else %}
+    <script src="{{site.baseurl}}/assets/js/{{js}}"></script>
+    {% endif %}
+    {% endfor %}
+    {% if site.google_tracking_id %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})
+      (window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{site.google_tracking_id}}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    {% endif %}
+    <script src="{{site.baseurl}}/assets/js/main.js"></script>
+  </body>
+</html>

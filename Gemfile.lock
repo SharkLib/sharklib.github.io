@@ -241,10 +241,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  github-pages
-
-RUBY VERSION
-   ruby 2.6.5p114
+  github-pages (= 203)
 
 BUNDLED WITH
    2.1.1
