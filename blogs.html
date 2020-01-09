@@ -1,0 +1,30 @@
+---
+layout: page
+title: blogs
+description: Meet our team.
+permalink: /blogs/
+menu: true
+---
+
+<h1>blogs</h1>
+
+
+<div class="staff">
+  {% for post in site.posts %}
+    <div class="item">
+      <h3 class="name">
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      </h3>
+      {% if post.description %}
+        <h4 class="position">{{ post.description }}</h4>
+      {% endif %}
+
+      {% if post.image %}
+        <img src="{{ site.baseurl }}{{ post.image }}">
+      </h2>
+      {% endif %}
+      
+    </div>
+  {% endfor %}
+
+</div>

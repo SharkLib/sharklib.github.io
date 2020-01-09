@@ -1,46 +1,92 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Site Settings
+name: SharkLib
+title: SharkLib | A Tecknical Company
+description: SharkLib is a Tecknical Company who develop C++(Qt|C#|.net|JS|Java) software.
+tags:
+  - blog
+  - template
+  - jekyll
+  - theme
+  - netlify
+email: youremail@xyz.com
+disqus_username: disqus_username
+show_hero: true
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: SharkLib
-description: > # this means to ignore newlines until "baseurl:"
-  Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
-baseurl: ""
-url: "https://sharklib.github.io"
-permalink: /:year/:month/:day/:title
-#repository: ShawnTeoh/matjek
-paginate: 5
 
-# MatJek specific configurations
-github_profile: "https://github.com/SharkLib"
-user: "Ron"
-user_email: "ron.rh.plus@gmail.com"
-contact_url: "https://hhh.gl/tVljbV"
-google_tracking_id: "UA--1"
-google_site_verification: "UA--1"
-disqus_shortname: "matjek"
+# Social Media Settings
+# Remove the item if you don't need it
+github_username: github_username
+facebook_username: facebook_username
+twitter_username: twitter_username
+instagram_username: instagram_username
+linkedin_username: linkedin_username
+medium_username: medium_username
+
+
+# Theme Settings
+themeColor: "#ff0a16"
+primaryDark: "#141414"
+accentDark: "#ffffff"
+lightGray: "#f2f2f2"
+texts: "#333333"
+
+
+# Posts Settings
+show_time_bar: true
+show_modal_on_exit: false
+show_modal_on_finish_post: true
+two_columns_layout: true
+
+
+# Advanced Settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+google_analytics: "UA-XXXXXXXX-X"
+language: "en"
+
 
 # Build settings
 markdown: kramdown
-gems:
-  - jekyll-feed
+highlighter: rouge
+permalink: /:title/
+collections:
+  authors:
+    output: true
+paginate_path: "/page/:num/"
+
+# Content paginator
+paginate_content:
+  enabled: true
+  debug: false
+  collections:
+    - posts
+    - projects
+  auto: false
+  separator: "--page-break--"
+  permalink: "/:num/"
+  seo_canonical: true
+  properties:
+    part:
+      is_generated: true
+    last:
+      is_generated: true
+    single:
+      is_generated: true
+
+# Plugins
+plugins:
   - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-sitemap
-exclude:
-  - Gemfile
-  - Gemfile.lock
-sass:
-  style: compressed
-future: true
+  - jekyll-paginate-content
+
+# Exclude my node related stuff
+exclude: [
+  'package.json',
+  'package-lock.json',
+  'src',
+  'node_modules',
+  'initpost.sh',
+  'Gemfile',
+  'Gemfile.lock',
+  'gulpfile.js',
+  'README.md'
+]

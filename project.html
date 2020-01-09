@@ -1,0 +1,28 @@
+---
+layout: page
+title: porject
+description: Meet our team.
+permalink: /project/
+menu: true
+---
+
+<h1>Projects</h1>
+
+<div class="staff">
+  {% for author in site.authors %}
+    <div class="item">
+      <h3 class="name">
+        <a href="{{ site.baseurl }}{{ author.url }}">{{ author.title }}</a>
+      </h3>
+      {% if author.description %}
+        <h4 class="position">{{ author.description }}</h4>
+      {% endif %}
+
+      {% if author.image %}
+        <img src="{{ site.baseurl }}{{ author.image }}">
+      </h2>
+      {% endif %}
+      
+    </div>
+  {% endfor %}
+</div>
