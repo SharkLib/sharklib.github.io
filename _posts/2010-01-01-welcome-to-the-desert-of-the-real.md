@@ -14,6 +14,7 @@ category: blog
 tags:
   - welcome
   - blog
+  - Qt
 author: thiagorossener
 paginate: true
 ---

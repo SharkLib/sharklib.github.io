@@ -10,6 +10,8 @@ category: css
 tags:
   - css
   - tips
+  - jd
+  - Python
 author: thiagorossener
 ---
 

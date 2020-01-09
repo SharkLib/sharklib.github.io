@@ -1,0 +1,32 @@
+---
+layout: page
+title: Python
+description: Meet our team.
+permalink: /python/
+menu: true
+---
+
+<h1>Python</h1>
+
+
+<div class="staff">
+  {% for post in site.posts %}
+    {% if post.tags contains "Python" %}
+      <div class="item">
+        <h3 class="name">
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        {% if post.description %}
+          <h4 class="position">{{ post.description }}</h4>
+        {% endif %}
+
+        {% if post.image %}
+          <img src="{{ site.baseurl }}{{ post.image }}">
+        </h2>
+        {% endif %}
+     
+      </div>
+    {% endif %}  
+  {% endfor %}
+
+</div>

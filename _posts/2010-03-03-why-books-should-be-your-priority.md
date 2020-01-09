@@ -10,7 +10,8 @@ category: life
 tags:
   - books
   - read
-author: Sharklib
+  - js
+author: thiagorossener
 paginate: true
 ---
 

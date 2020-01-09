@@ -1,0 +1,31 @@
+---
+layout: page
+title: C++
+description: Meet our team.
+permalink: /cpp/
+menu: true
+---
+
+<h1>C++</h1>
+
+<div class="staff">
+  {% for post in site.posts %}
+    {% if post.tags contains "c++" %}
+      <div class="item">
+        <h3 class="name">
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        {% if post.description %}
+          <h4 class="position">{{ post.description }}</h4>
+        {% endif %}
+
+        {% if post.image %}
+          <img src="{{ site.baseurl }}{{ post.image }}">
+        </h2>
+        {% endif %}
+     
+      </div>
+    {% endif %}  
+  {% endfor %}
+
+</div>

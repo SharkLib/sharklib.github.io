@@ -15,6 +15,7 @@ tags:
   - mountains
   - travel
   - adventure
+  - c++
 author: thiagorossener
 paginate: true
 ---
