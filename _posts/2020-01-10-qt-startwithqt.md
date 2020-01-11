@@ -8,7 +8,7 @@ description: >-
 image: >-
   /assets/img/Qtcreator-overview.png
 optimized_image: >-
-  https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg
+  /assets/img/Qtcreator-overview.png
 category: blog
 tags:
   - welcome
