@@ -6,9 +6,9 @@ subtitle: Automation Tool - AutoMan
 description: >-
   AutoMan is an application base on OpenCV/Qt5.12.4. It can use to do automation testing, or do some repeated work.
 image: >-
-  https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg
+  /assets/img/automan.jpeg
 optimized_image: >-
-  https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg
+  /assets/img/automan.jpeg
 category: Software
 tags:
   - welcome
