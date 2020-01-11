@@ -9,7 +9,7 @@ image: >-
   https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg
 optimized_image: >-
   https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg
-category: blog
+category: Software
 tags:
   - welcome
   - blog
@@ -44,7 +44,7 @@ Here is a exsample. I want to download all music from sq688.com, but it is a bor
             cmd(ctrl+w)
 ```
 In this sample, AutoMan will use OpenCV to find out all elments like links, and click them, in the subsquent web, find the object like open, get, save, ok and click, in the middle of them, call a shotcut "Ctrl+V" to paste the content in clipboard to a text area, when all steps are done, call another two shotcut "Ctrl+w" to close a web tab.
-<img src="image/downloadsong.png">
+<img src="/assets/img/downloadsong.png">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/I3OswJPI1I0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
    
