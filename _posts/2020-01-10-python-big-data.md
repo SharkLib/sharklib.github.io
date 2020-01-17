@@ -1,8 +1,8 @@
 ---
 date: 2020-01-01 11:48:05
 layout: post
-title: Python and spider
-subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+title: Python and big data
+subtitle: Learn big data python
 description: >-
   A very useful collection for learn Python&Spyder in Chinese.
 image: >-
