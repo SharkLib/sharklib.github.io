@@ -9,9 +9,8 @@ image: >-
   /assets/img/python-training.png
 optimized_image: >-
   /assets/img/python-training.png
-category: blog
+category: Python
 tags:
-  - welcome
   - blog
   - Python
 author: Ron

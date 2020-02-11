@@ -50,6 +50,15 @@
         </url>
     
         <url>
+            <loc>http://localhost:4000/Cpp/</loc>
+            
+                <changefreq>weekly</changefreq>
+                <priority>1</priority>
+                <lastmod>2020-02-10</lastmod>
+            
+        </url>
+    
+        <url>
             <loc>http://localhost:4000/category/css/</loc>
             
                 <changefreq>monthly</changefreq>
@@ -78,7 +87,24 @@
             
                 <changefreq>weekly</changefreq>
                 <priority>1</priority>
-                <lastmod>2020-01-08</lastmod>
+                <lastmod>2020-02-10</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/js/</loc>
+            
+                <changefreq>weekly</changefreq>
+                <priority>1</priority>
+                <lastmod>2020-02-10</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/js/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
             
         </url>
     
@@ -119,6 +145,15 @@
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/python/</loc>
+            
+                <changefreq>weekly</changefreq>
+                <priority>1</priority>
+                <lastmod>2020-02-10</lastmod>
             
         </url>
     
@@ -180,173 +215,169 @@
     
     
         <url>
-            <loc>http://localhost:4000/welcome-to-the-desert-of-the-real/view-all/</loc>
+            <loc>http://localhost:4000/vtk-course12/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-16</lastmod>
+            <lastmod>2020-01-12</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/welcome-to-the-desert-of-the-real/</loc>
+            <loc>http://localhost:4000/vtk-course11/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-16</lastmod>
+            <lastmod>2020-01-11</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/welcome-to-the-desert-of-the-real/2/</loc>
+            <loc>http://localhost:4000/vtk-course10/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-16</lastmod>
+            <lastmod>2020-01-10</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/far-far-away-behind-the-word-mountains/2/</loc>
+            <loc>http://localhost:4000/vtk-course9/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-12</lastmod>
+            <lastmod>2020-01-09</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/far-far-away-behind-the-word-mountains/</loc>
+            <loc>http://localhost:4000/vtk-course8/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-12</lastmod>
+            <lastmod>2020-01-08</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/far-far-away-behind-the-word-mountains/view-all/</loc>
+            <loc>http://localhost:4000/vtk-course7/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-12</lastmod>
+            <lastmod>2020-01-07</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/far-far-away-behind-the-word-mountains/3/</loc>
+            <loc>http://localhost:4000/vtk-course6/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2019-05-12</lastmod>
+            <lastmod>2020-01-06</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/why-books-should-be-your-priority/</loc>
+            <loc>http://localhost:4000/vtk-course5/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2018-11-22</lastmod>
+            <lastmod>2020-01-05</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/the-quick-brown-fox-jumps-over-a-lazy-dog/</loc>
+            <loc>http://localhost:4000/vtk-course4/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2018-10-09</lastmod>
+            <lastmod>2020-01-04</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/a-wonderful-serenity-has-taken-possession-of-my-entire-soul/</loc>
+            <loc>http://localhost:4000/vtk-course3/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2018-07-20</lastmod>
+            <lastmod>2020-01-03</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/candy-candies-candy/</loc>
+            <loc>http://localhost:4000/vtk-course2/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2018-04-21</lastmod>
+            <lastmod>2020-01-02</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/trust-me-it-will-work/</loc>
+            <loc>http://localhost:4000/vtk-course1/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2018-03-12</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/how-to-turn-your-dog-into-a-jedi-master/</loc>
+            <loc>http://localhost:4000/cpp-vtk/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2018-02-03</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/let-flexbox-work-for-you-or-perish/</loc>
+            <loc>http://localhost:4000/food-1/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2017-08-14</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/a-star-has-fallen-from-the-sky-and-the-cat-ate-it/</loc>
+            <loc>http://localhost:4000/cpp-stl/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2017-08-07</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/smoke-alert/</loc>
+            <loc>http://localhost:4000/stl-threadpool/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2017-07-29</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/do-you-believe-that-a-spider-can-dance/</loc>
+            <loc>http://localhost:4000/qt-threadpool/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2017-06-08</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/a-cook-cries-in-the-rain-at-night/</loc>
+            <loc>http://localhost:4000/qt-qml/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2017-06-04</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/grab-your-band-and-get-out/</loc>
+            <loc>http://localhost:4000/qt-startwithqt/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2017-05-11</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/passion-is-dangerous-go-for-it/</loc>
+            <loc>http://localhost:4000/python-spyder/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2015-09-06</lastmod>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/birds-can-fly-but-this-you-knew-already/</loc>
+            <loc>http://localhost:4000/python-ELK/</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
-            <lastmod>2010-09-10</lastmod>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/python-full-stack/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/python-big-data/</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
         </url>
     
     
         <url>
-            <loc>http://localhost:4000/authors/p2/</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-    
-        <url>
-            <loc>http://localhost:4000/authors/p3/</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-    
-        <url>
-            <loc>http://localhost:4000/authors/p1/</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
-        </url>
-    
-        <url>
-            <loc>http://localhost:4000/authors/thiagorossener/</loc>
+            <loc>http://localhost:4000/authors/automan/</loc>
             <changefreq>monthly</changefreq>
             <priority>0.5</priority>
         </url>

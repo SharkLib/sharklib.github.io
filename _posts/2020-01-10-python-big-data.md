@@ -9,9 +9,8 @@ image: >-
   /assets/img/bigdata.jpeg
 optimized_image: >-
   /assets/img/bigdata.jpeg
-category: blog
+category: Python
 tags:
-  - welcome
   - blog
   - Python
 author: Ron

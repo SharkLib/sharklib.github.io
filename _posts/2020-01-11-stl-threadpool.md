@@ -9,11 +9,11 @@ image: >-
   /assets/img/Qtcreator-overview.png
 optimized_image: >-
   /assets/img/Qtcreator-overview.png
-category: blog
+category: STL
 tags:
   - welcome
   - blog
-  - Qt
+  - c++
 author: Ron
 paginate: true
 ---

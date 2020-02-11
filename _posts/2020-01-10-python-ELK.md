@@ -9,9 +9,8 @@ image: >-
   /assets/img/python-training.png
 optimized_image: >-
   /assets/img/python-training.png
-category: blog
+category: Python
 tags:
-  - welcome
   - blog
   - Python
 author: Ron
@@ -52,7 +51,7 @@ Logash is essentially a streamline ETL pipeline that allows an array of options 
 
 
 
-1, Downlaod [ELK]] (https://www.elastic.co/)
+1, Downlaod [ELK] (https://www.elastic.co/)
 
 2, Run elasticsearch:
 
