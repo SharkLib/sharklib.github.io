@@ -9,7 +9,7 @@ image: >-
   /assets/img/Qtcreator-overview.png
 optimized_image: >-
   /assets/img/Qtcreator-overview.png
-category: QT
+category: Qt
 tags:
   - welcome
   - blog

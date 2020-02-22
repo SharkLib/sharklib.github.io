@@ -1,31 +1,27 @@
 ---
-layout: page
-title: Javascript
-description: Meet our team.
-permalink: /js/
-menu: true
+layout: default
 ---
 
-<h1>Javascript</h1>
+<div class="well article">
+{% assign sortedcategories = site.categories | sort %}
 
-<div class="staff">
-  {% for post in site.posts %}
-    {% if post.tags contains "js" %}
-      <div class="item">
-        <h3 class="name">
-          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        </h3>
-        {% if post.description %}
-          <h4 class="position">{{ post.description }}</h4>
-        {% endif %}
-
-        {% if post.image %}
-          <img src="{{ site.baseurl }}{{ post.image }}">
-        </h2>
-        {% endif %}
-     
-      </div>
-    {% endif %}  
-  {% endfor %}
-
+{% for category in sortedcategories %}
+    {% if category[0] == 'Javascript' %}
+    <h2>{{ category[0] | capitalize }}</h2>
+    <ul>
+        {% assign pages_list = category[1] %}
+        {% for node in pages_list %}
+            {% if node.title != null %}
+            {% if group == null or group == node.group %}
+                <li><span class="post-date">
+                    {% assign date_format = site.date_format.categories %}
+                    {{ node.date | date: date_format }} </span><a href="{{ site.baseurl}}{{ node.url }}">{{ node.title }}</a></li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        {% assign pages_list = nil %}
+    </ul>
+        
+    {% endif %}
+{% endfor %}
 </div>

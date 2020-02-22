@@ -1,19 +1,26 @@
-# Site Settings
+# Jekyll configuration
+
 name: SharkLib
-title: SharkLib | A Tecknical Company
-description: SharkLib is a Tecknical Company who develop C++(Qt|C#|.net|JS|Java) software.
-tags:
-  - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
-email: sharversion@gmail.com
-disqus_username: Ron
-show_hero: true
+description: Welcome to SharkLib
+
+# url is currently only used only for the RSS feed in feed.xml
+url: https://github.com/SharkLib
+
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: ''
+## default date_format
+date_format: 
+  title: "%B-%-d-%Y"
+  archive: "%b"
+  categories: "%b-%Y"
+  tag: "%b-%Y"
+# Language
+lan: "en" 
 
 
-# Social Media Settings
 # Remove the item if you don't need it
 github_username: sharklib
 facebook_username: facebook_username
@@ -22,71 +29,10 @@ instagram_username: ronghuang100
 linkedin_username: rong-huang-61751047
 medium_username: ronghuang100
 
+paginate: 10
 
-# Theme Settings
-themeColor: "#ff0a16"
-primaryDark: "#141414"
-accentDark: "#ffffff"
-lightGray: "#f2f2f2"
-texts: "#333333"
-
-
-# Posts Settings
-show_time_bar: true
-show_modal_on_exit: false
-show_modal_on_finish_post: true
-two_columns_layout: true
-
-
-# Advanced Settings
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-google_analytics: "UA-XXXXXXXX-X"
-language: "en"
-
-
-# Build settings
-markdown: kramdown
 highlighter: rouge
-permalink: /:title/
-collections:
-  authors:
-    output: true
-paginate_path: "/page/:num/"
+markdown: kramdown
+gems: ['jekyll-paginate']
 
-# Content paginator
-paginate_content:
-  enabled: true
-  debug: false
-  collections:
-    - posts
-    - projects
-  auto: false
-  separator: "--page-break--"
-  permalink: "/:num/"
-  seo_canonical: true
-  properties:
-    part:
-      is_generated: true
-    last:
-      is_generated: true
-    single:
-      is_generated: true
-
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-paginate-content
-
-# Exclude my node related stuff
-exclude: [
-  'package.json',
-  'package-lock.json',
-  'src',
-  'node_modules',
-  'initpost.sh',
-  'Gemfile',
-  'Gemfile.lock',
-  'gulpfile.js',
-  'README.md'
-]
+exclude: ['README.md', 'LICENSE', "*.bak"]

@@ -1,397 +1,557 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>SharkLib | A Tecknical Company</title>
-    <description>SharkLib is a Tecknical Company who develop C++(Qt|C#|.net|JS|Java) software.</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 10 Feb 2020 21:56:45 -0500</pubDate>
-    <lastBuildDate>Mon, 10 Feb 2020 21:56:45 -0500</lastBuildDate>
-    <generator>Jekyll v3.8.6</generator>
-    
-      <item>
-        <title>Cource 12 First VTK project</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Sun, 12 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course12/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course12/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 11 First VTK project</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Sat, 11 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course11/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course11/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 10 First VTK project</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Fri, 10 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course10/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course10/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 9 First VTK project</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Thu, 09 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course9/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course9/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 8 First VTK project</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Wed, 08 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course8/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course8/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 7 First VTK project</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Tue, 07 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course7/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course7/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 6 First VTK project</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Mon, 06 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course6/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course6/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 5 - Cone and Box widget</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Sun, 05 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course5/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course5/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 4 - Cone and Axes</title>
-        <description>&lt;p&gt;Base on couse 2, Changed step 4 to&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;4, Create a QVTKOpenGLWidget&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 0: set it to a window: auto vw = new QVTKOpenGLWidget(this) ; vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow(); ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, __FUNCTION__); vtkRenderer *render= vtkRenderer::New(); render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 ); vtkSmartPointer&amp;lt;vtkConeSource&amp;gt; coneSource = vtkSmartPointer&amp;lt;vtkConeSource&amp;gt;::New(); coneSource-&amp;gt;SetRadius(.2); coneSource-&amp;gt;SetHeight(.5); coneSource-&amp;gt;SetCenter(0, 0, 0); vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; coneMapper = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New(); coneMapper-&amp;gt;SetInputConnection(coneSource-&amp;gt;GetOutputPort()); vtkSmartPointer&amp;lt;vtkActor&amp;gt; coneActor = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New(); coneActor-&amp;gt;SetMapper(coneMapper); vtkSmartPointer&amp;lt;vtkActor&amp;gt; oriConeActor = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New(); oriConeActor-&amp;gt;SetMapper(coneMapper); render-&amp;gt;AddActor(oriConeActor); double AXIS_LEN = 1.0; vtkSmartPointer&amp;lt;vtkAxesActor&amp;gt; oriAxesActor = vtkSmartPointer&amp;lt;vtkAxesActor&amp;gt;::New(); oriAxesActor-&amp;gt;SetPosition(0, 0, 0); oriAxesActor-&amp;gt;SetTotalLength(AXIS_LEN, AXIS_LEN, AXIS_LEN); oriAxesActor-&amp;gt;SetShaftType(0); oriAxesActor-&amp;gt;SetAxisLabels(0); oriAxesActor-&amp;gt;SetCylinderRadius(0.02); render-&amp;gt;AddActor(oriAxesActor); renWin-&amp;gt;AddRenderer( render ); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;/div&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;5, Build and run You...</description>
-        <pubDate>Sat, 04 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course4/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course4/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 3 - Cone and Outline</title>
-        <description>&lt;p&gt;Base on couse 1, Changed step 4 to&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;4, Create a QVTKOpenGLWidget&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 0: set it to a window: auto vw = new QVTKOpenGLWidget(this) ; vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow(); ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, __FUNCTION__); vtkRenderer *render= vtkRenderer::New(); render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 ); vtkSmartPointer&amp;lt;vtkConeSource&amp;gt; coneSource = vtkSmartPointer&amp;lt;vtkConeSource&amp;gt;::New(); coneSource-&amp;gt;SetRadius(.2); coneSource-&amp;gt;SetHeight(.5); coneSource-&amp;gt;SetCenter(0, 0, 0); vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; coneMapper = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New(); coneMapper-&amp;gt;SetInputConnection(coneSource-&amp;gt;GetOutputPort()); vtkSmartPointer&amp;lt;vtkActor&amp;gt; coneActor = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New(); coneActor-&amp;gt;SetMapper(coneMapper); vtkSmartPointer&amp;lt;vtkActor&amp;gt; oriConeActor = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New(); oriConeActor-&amp;gt;SetMapper(coneMapper); // added outline vtkSmartPointer&amp;lt;vtkOutlineFilter&amp;gt; outline = vtkSmartPointer&amp;lt;vtkOutlineFilter&amp;gt;::New(); outline-&amp;gt;SetInputConnection(coneSource-&amp;gt;GetOutputPort()); vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; outlineMapper = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New(); outlineMapper-&amp;gt;SetInputConnection(outline-&amp;gt;GetOutputPort()); vtkSmartPointer&amp;lt;vtkActor&amp;gt; outlineActor = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New(); outlineActor-&amp;gt;SetMapper(outlineMapper); outlineActor-&amp;gt;GetProperty()-&amp;gt;SetColor(0, 0, 0); render-&amp;gt;AddActor(oriConeActor); render-&amp;gt;AddActor(outlineActor); renWin-&amp;gt;AddRenderer( render ); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;/div&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;5,...</description>
-        <pubDate>Fri, 03 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course3/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course3/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 2 - Cone Application</title>
-        <description>&lt;ul&gt; &lt;li&gt; &lt;p&gt;1, Open Qt Creator. In the file menu select new project and create a Qt widget Application.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;2, Open pro file and VTK include path, add used libs.&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; INCLUDEPATH += ./work/include/vtk-8.2 ... LIBS += -L/usr/local/lib/ -lvtkChartsCore-8.2.1 LIBS += -L/usr/local/lib/ -lvtkCommonColor-8.2.1 LIBS += -L/usr/local/lib/ -lvtkCommonComputationalGeometry-8.2.1 LIBS += -L/usr/local/lib/ -lvtkCommonCore-8.2.1 ... &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;/div&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;3, setQSurfaceFormat&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; #include &quot;mainwindow.h&quot; #include &amp;lt;QApplication&amp;gt; #include &amp;lt;vtkQImageToImageSource.h&amp;gt; #include &amp;lt;vtkSmartPointer.h&amp;gt; #include &amp;lt;QLabel&amp;gt; #include &amp;lt;QVTKOpenGLNativeWidget.h&amp;gt; int main(int argc, char *argv[]) { QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); QApplication a(argc, argv); MainWindow w; w.show(); return a.exec(); } &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; &lt;/div&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;4,...</description>
-        <pubDate>Thu, 02 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course2/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course2/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>Cource 1, Configure and Build VTK</title>
-        <description>&lt;p&gt;Prepare:
-To set up your environment, you need to have:&lt;/p&gt;
+	<channel>
+		<title>SharkLib</title>
+		<description>Welcome to SharkLib</description>
+		<link>http://localhost:4000</link>
+		<atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Course 12 First VTK project</title>
+				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
+
+&lt;p&gt;Set surface for the project&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initial module&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT( vtkRenderingFreeType );
+VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
+
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
+  vtkCylinderSource *cylinder = vtkCylinderSource::New();
+  cylinder-&amp;gt;SetHeight( 3.0 );
+  cylinder-&amp;gt;SetRadius( 1.0 );
+  cylinder-&amp;gt;SetResolution( 4 );
+
+  //step 2: map data to a pipeline
+  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
+  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+
+  //step 3: create a actor and represente the pipeline
+  vtkActor *actor = vtkActor::New();
+  actor-&amp;gt;SetMapper( cylinderMapper );
+
+  //step4 :create a render and set the actor to it
+  vtkRenderer *render= vtkRenderer::New();
+  render-&amp;gt;AddActor( actor );
+  render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+
+  //step 5: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  renWin-&amp;gt;AddRenderer( render );
+  renWin-&amp;gt;SetSize( 300, 300 );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Sun, 12 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/12/vtk-course12.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/12/vtk-course12.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 11 First VTK project</title>
+				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
+
+&lt;p&gt;Set surface for the project&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initial module&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT( vtkRenderingFreeType );
+VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
+
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
+  vtkCylinderSource *cylinder = vtkCylinderSource::New();
+  cylinder-&amp;gt;SetHeight( 3.0 );
+  cylinder-&amp;gt;SetRadius( 1.0 );
+  cylinder-&amp;gt;SetResolution( 4 );
+
+  //step 2: map data to a pipeline
+  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
+  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+
+  //step 3: create a actor and represente the pipeline
+  vtkActor *actor = vtkActor::New();
+  actor-&amp;gt;SetMapper( cylinderMapper );
+
+  //step4 :create a render and set the actor to it
+  vtkRenderer *render= vtkRenderer::New();
+  render-&amp;gt;AddActor( actor );
+  render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+
+  //step 5: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  renWin-&amp;gt;AddRenderer( render );
+  renWin-&amp;gt;SetSize( 300, 300 );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Sat, 11 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/11/vtk-course11.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/11/vtk-course11.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 10 First VTK project</title>
+				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
+
+&lt;p&gt;Set surface for the project&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initial module&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT( vtkRenderingFreeType );
+VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
+
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
+  vtkCylinderSource *cylinder = vtkCylinderSource::New();
+  cylinder-&amp;gt;SetHeight( 3.0 );
+  cylinder-&amp;gt;SetRadius( 1.0 );
+  cylinder-&amp;gt;SetResolution( 4 );
+
+  //step 2: map data to a pipeline
+  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
+  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+
+  //step 3: create a actor and represente the pipeline
+  vtkActor *actor = vtkActor::New();
+  actor-&amp;gt;SetMapper( cylinderMapper );
+
+  //step4 :create a render and set the actor to it
+  vtkRenderer *render= vtkRenderer::New();
+  render-&amp;gt;AddActor( actor );
+  render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+
+  //step 5: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  renWin-&amp;gt;AddRenderer( render );
+  renWin-&amp;gt;SetSize( 300, 300 );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Fri, 10 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/10/vtk-course10.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/10/vtk-course10.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 9 First VTK project</title>
+				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
+
+&lt;p&gt;Set surface for the project&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initial module&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT( vtkRenderingFreeType );
+VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
+
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
+  vtkCylinderSource *cylinder = vtkCylinderSource::New();
+  cylinder-&amp;gt;SetHeight( 3.0 );
+  cylinder-&amp;gt;SetRadius( 1.0 );
+  cylinder-&amp;gt;SetResolution( 4 );
+
+  //step 2: map data to a pipeline
+  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
+  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+
+  //step 3: create a actor and represente the pipeline
+  vtkActor *actor = vtkActor::New();
+  actor-&amp;gt;SetMapper( cylinderMapper );
+
+  //step4 :create a render and set the actor to it
+  vtkRenderer *render= vtkRenderer::New();
+  render-&amp;gt;AddActor( actor );
+  render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+
+  //step 5: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  renWin-&amp;gt;AddRenderer( render );
+  renWin-&amp;gt;SetSize( 300, 300 );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Thu, 09 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/09/vtk-course9.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/09/vtk-course9.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 8 First VTK project</title>
+				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
+
+&lt;p&gt;Set surface for the project&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initial module&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT( vtkRenderingFreeType );
+VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
+
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
+  vtkCylinderSource *cylinder = vtkCylinderSource::New();
+  cylinder-&amp;gt;SetHeight( 3.0 );
+  cylinder-&amp;gt;SetRadius( 1.0 );
+  cylinder-&amp;gt;SetResolution( 4 );
+
+  //step 2: map data to a pipeline
+  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
+  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+
+  //step 3: create a actor and represente the pipeline
+  vtkActor *actor = vtkActor::New();
+  actor-&amp;gt;SetMapper( cylinderMapper );
+
+  //step4 :create a render and set the actor to it
+  vtkRenderer *render= vtkRenderer::New();
+  render-&amp;gt;AddActor( actor );
+  render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+
+  //step 5: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  renWin-&amp;gt;AddRenderer( render );
+  renWin-&amp;gt;SetSize( 300, 300 );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Wed, 08 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/08/vtk-course8.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/08/vtk-course8.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 7 First VTK project</title>
+				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
+
+&lt;p&gt;Set surface for the project&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initial module&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT( vtkRenderingFreeType );
+VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
+
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
+  vtkCylinderSource *cylinder = vtkCylinderSource::New();
+  cylinder-&amp;gt;SetHeight( 3.0 );
+  cylinder-&amp;gt;SetRadius( 1.0 );
+  cylinder-&amp;gt;SetResolution( 4 );
+
+  //step 2: map data to a pipeline
+  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
+  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+
+  //step 3: create a actor and represente the pipeline
+  vtkActor *actor = vtkActor::New();
+  actor-&amp;gt;SetMapper( cylinderMapper );
+
+  //step4 :create a render and set the actor to it
+  vtkRenderer *render= vtkRenderer::New();
+  render-&amp;gt;AddActor( actor );
+  render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+
+  //step 5: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  renWin-&amp;gt;AddRenderer( render );
+  renWin-&amp;gt;SetSize( 300, 300 );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Tue, 07 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/07/vtk-course7.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/07/vtk-course7.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 6 First VTK project</title>
+				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
+
+&lt;p&gt;Set surface for the project&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initial module&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT( vtkRenderingFreeType );
+VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
+
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
+  vtkCylinderSource *cylinder = vtkCylinderSource::New();
+  cylinder-&amp;gt;SetHeight( 3.0 );
+  cylinder-&amp;gt;SetRadius( 1.0 );
+  cylinder-&amp;gt;SetResolution( 4 );
+
+  //step 2: map data to a pipeline
+  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
+  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+
+  //step 3: create a actor and represente the pipeline
+  vtkActor *actor = vtkActor::New();
+  actor-&amp;gt;SetMapper( cylinderMapper );
+
+  //step4 :create a render and set the actor to it
+  vtkRenderer *render= vtkRenderer::New();
+  render-&amp;gt;AddActor( actor );
+  render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+
+  //step 5: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  renWin-&amp;gt;AddRenderer( render );
+  renWin-&amp;gt;SetSize( 300, 300 );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Mon, 06 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/06/vtk-course6.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/06/vtk-course6.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 5 - Cone and Box widget</title>
+				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
+
+&lt;p&gt;Set surface for the project&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Initial module&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+VTK_MODULE_INIT( vtkRenderingFreeType );
+VTK_MODULE_INIT(vtkRenderingContextOpenGL2);
+
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
+  vtkCylinderSource *cylinder = vtkCylinderSource::New();
+  cylinder-&amp;gt;SetHeight( 3.0 );
+  cylinder-&amp;gt;SetRadius( 1.0 );
+  cylinder-&amp;gt;SetResolution( 4 );
+
+  //step 2: map data to a pipeline
+  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
+  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+
+  //step 3: create a actor and represente the pipeline
+  vtkActor *actor = vtkActor::New();
+  actor-&amp;gt;SetMapper( cylinderMapper );
+
+  //step4 :create a render and set the actor to it
+  vtkRenderer *render= vtkRenderer::New();
+  render-&amp;gt;AddActor( actor );
+  render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+
+  //step 5: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  renWin-&amp;gt;AddRenderer( render );
+  renWin-&amp;gt;SetSize( 300, 300 );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Sun, 05 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/05/vtk-course5.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/05/vtk-course5.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 4 - Cone and Axes</title>
+				<description>&lt;p&gt;Base on couse 2, Changed step 4 to&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;1, Install &lt;a href=&quot;https://cmake.org/download/&quot;&gt;CMake&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;2, Install &lt;a href=&quot;qt.io&quot;&gt;Qt&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;3, Download &lt;a href=&quot;https://vtk.org/download/&quot;&gt;VTK source codes&lt;/a&gt; and compile it.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4, Create a QVTKOpenGLWidget&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 0: set it to a window:
+auto vw = new  QVTKOpenGLWidget(this) ;
+vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, __FUNCTION__);
+  
+vtkRenderer *render= vtkRenderer::New();
+  
+render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+  
+vtkSmartPointer&amp;lt;vtkConeSource&amp;gt; coneSource = vtkSmartPointer&amp;lt;vtkConeSource&amp;gt;::New();
+coneSource-&amp;gt;SetRadius(.2);
+coneSource-&amp;gt;SetHeight(.5);
+coneSource-&amp;gt;SetCenter(0, 0, 0);
+  
+  
+vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; coneMapper =
+    vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+coneMapper-&amp;gt;SetInputConnection(coneSource-&amp;gt;GetOutputPort());
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; coneActor =
+    vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+coneActor-&amp;gt;SetMapper(coneMapper);
+  
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; oriConeActor =
+    vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+oriConeActor-&amp;gt;SetMapper(coneMapper);
+  
+render-&amp;gt;AddActor(oriConeActor);
+  
+double AXIS_LEN = 1.0;
+vtkSmartPointer&amp;lt;vtkAxesActor&amp;gt; oriAxesActor =
+    vtkSmartPointer&amp;lt;vtkAxesActor&amp;gt;::New();
+oriAxesActor-&amp;gt;SetPosition(0, 0, 0);
+oriAxesActor-&amp;gt;SetTotalLength(AXIS_LEN, AXIS_LEN, AXIS_LEN);
+oriAxesActor-&amp;gt;SetShaftType(0);
+oriAxesActor-&amp;gt;SetAxisLabels(0);
+oriAxesActor-&amp;gt;SetCylinderRadius(0.02);
+  
+  
+render-&amp;gt;AddActor(oriAxesActor);
+  
+renWin-&amp;gt;AddRenderer( render );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;5, Build and run
+You will get:
+&lt;img src=&quot;/assets/img/couse3.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Sat, 04 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/04/vtk-course4.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/04/vtk-course4.html</guid>
+			</item>
+		
+			<item>
+				<title>Course 3 - Cone and Outline</title>
+				<description>&lt;p&gt;Base on couse 2, Changed step 4 to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;4, Create a QVTKOpenGLWidget&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 0: set it to a window:
+auto vw = new  QVTKOpenGLWidget(this) ;
+vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
+ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, __FUNCTION__);
+
+vtkRenderer *render= vtkRenderer::New();
+
+render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
+
+vtkSmartPointer&amp;lt;vtkConeSource&amp;gt; coneSource = vtkSmartPointer&amp;lt;vtkConeSource&amp;gt;::New();
+coneSource-&amp;gt;SetRadius(.2);
+coneSource-&amp;gt;SetHeight(.5);
+coneSource-&amp;gt;SetCenter(0, 0, 0);
+
+
+vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; coneMapper =
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+coneMapper-&amp;gt;SetInputConnection(coneSource-&amp;gt;GetOutputPort());
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; coneActor =
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+coneActor-&amp;gt;SetMapper(coneMapper);
+
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; oriConeActor =
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+oriConeActor-&amp;gt;SetMapper(coneMapper);
+
+
+// added outline
+  vtkSmartPointer&amp;lt;vtkOutlineFilter&amp;gt; outline =
+  vtkSmartPointer&amp;lt;vtkOutlineFilter&amp;gt;::New();
+  outline-&amp;gt;SetInputConnection(coneSource-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; outlineMapper =
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+  outlineMapper-&amp;gt;SetInputConnection(outline-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt; outlineActor =
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+  outlineActor-&amp;gt;SetMapper(outlineMapper);
+  outlineActor-&amp;gt;GetProperty()-&amp;gt;SetColor(0, 0, 0);
+
+
+render-&amp;gt;AddActor(oriConeActor);
+render-&amp;gt;AddActor(outlineActor);
+renWin-&amp;gt;AddRenderer( render );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;5, Build and run
+You will get:
+&lt;img src=&quot;/assets/img/couse2.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;How to build your VTK, you can refer &lt;a href=&quot;https://vtk.org/Wiki/VTK/Configure_and_Build&quot;&gt;VTK/Configure and Build&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The only thing that artical did not mention is:&lt;/p&gt;
-
-&lt;p&gt;Set the right path for Qt, it is not the QT_DIR in your environment,&lt;/p&gt;
-
-&lt;p&gt;but it is:&lt;/p&gt;
-
-&lt;p&gt;##Something like – …Qt5.13.2/5.13.2/clang_64/lib/cmake&lt;/p&gt;
 </description>
-        <pubDate>Wed, 01 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/vtk-course1/</link>
-        <guid isPermaLink="true">http://localhost:4000/vtk-course1/</guid>
-        
-        <category>VTK</category>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>The import thing to start you VTK in Qt</title>
-        <description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt; &lt;p&gt;Set surface for the project&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat()); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;Initial module&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;VTK_MODULE_INIT(vtkRenderingOpenGL2); // VTK was built with vtkRenderingOpenGL2 VTK_MODULE_INIT(vtkInteractionStyle); VTK_MODULE_INIT( vtkRenderingFreeType ); VTK_MODULE_INIT(vtkRenderingContextOpenGL2); VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2); &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source; vtkCylinderSource *cylinder ~|=| vtkCylinderSource::New(); cylinder~|-|&amp;gt;SetHeight( 3.0 ); cylinder~|-|&amp;gt;SetRadius( 1.0 ); cylinder~|-|&amp;gt;SetResolution( 4 ); //step 2: map data to a pipeline vtkPolyDataMapper *cylinderMapper ~|=| vtkPolyDataMapper::New(); cylinderMapper~|-|&amp;gt;SetInputConnection( cylinder~|-|&amp;gt;GetOutputPort() ); //step 3: create a actor and represente the...</description>
-        <pubDate>Wed, 01 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/cpp-vtk/</link>
-        <guid isPermaLink="true">http://localhost:4000/cpp-vtk/</guid>
-        
-        <category>c++</category>
-        
-        <category>VTK</category>
-        
-        <category>VTK</category>
-      </item>
-    
-      <item>
-        <title>How to make delicious Chinese food</title>
-        <description>&lt;p&gt;Food&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_13270707487968735110%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=13270707487968735110&amp;amp;isBdboxShare=1&quot;&gt;猪脚&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_17356378992611134354%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=17356378992611134354&amp;amp;isBdboxShare=1&quot;&gt;秘制蘸料配方&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_5568064613870921738%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=5568064613870921738&amp;amp;isBdboxShare=1&quot;&gt;熬羊肉汤&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_16453158843394944348%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=16453158843394944348&amp;amp;isBdboxShare=1&quot;&gt;辣椒炒蛋&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_16563093268904962143%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=16563093268904962143&amp;amp;isBdboxShare=1&quot;&gt;不油不腻Q弹软烂猪脚&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_6644201093053995682%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=6644201093053995682&amp;amp;isBdboxShare=1&quot;&gt;正宗的水煮肉片&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_10813589095660373553%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=10813589095660373553&amp;amp;isBdboxShare=1&quot;&gt;麻辣水煮鱼&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_7385105173843016628%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=7385105173843016628&amp;amp;isBdboxShare=1&quot;&gt;焦香肉嫩  鸡翅&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_3239692693584378234%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=3239692693584378234&amp;amp;isBdboxShare=1&quot;&gt;手指牛肉&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_9276185446255083178%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=9276185446255083178&amp;amp;isBdboxShare=1&quot;&gt;鸭肉&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_11056566396323317234%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=11056566396323317234&amp;amp;isBdboxShare=1&quot;&gt;川味凉拌鸡&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_13185279193248359209%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=13185279193248359209&amp;amp;isBdboxShare=1&quot;&gt;排骨不炸也不炖&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_8571279570786448988%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=8571279570786448988&amp;amp;isBdboxShare=1&quot;&gt;仔姜炒鸭&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_8742225952712165357%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=8742225952712165357&amp;amp;isBdboxShare=1&quot;&gt;黄豆猪脚&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://haokan.baidu.com/v?pd=share&amp;amp;context=%7B%22nid%22%3A%22sv_12001797111834929729%22%2C%22sourceFrom%22%3A%22bjh%22%7D&amp;amp;vid=12001797111834929729&amp;amp;isBdboxShare=1&quot;&gt;猪肉鸡蛋焖腐竹&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 01 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/food-1/</link>
-        <guid isPermaLink="true">http://localhost:4000/food-1/</guid>
-        
-        <category>welcome</category>
-        
-        <category>blog</category>
-        
-        <category>food</category>
-        
-        <category>mothed</category>
-        
-        <category>Food</category>
-      </item>
-    
-      <item>
-        <title>C++ stand 11/14</title>
-        <description>&lt;p&gt;## Python and spider&lt;/p&gt; &lt;p&gt;Excel is a popular and powerful spreadsheet.Pandas module allows your Python programs to read and modify Excel spreadsheet files, and do data science research. Here is a smaple to use Pandas to deal with data efficiently.&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ~|#|import the pandas to env. import pandas as pd ~|#|get thie excel file and the worksheet name. path ~|=| input(&quot;Enter file name : &quot;) st_name ~|=| input(&quot;Enter sheet name : &quot;) print(path, st_name) ~|#|open file and read the worksheet. df ~|=| pd.read_excel(path,sheet_name ~|=| st_name,index~|=|False) ~|#|list some sample print(df.head()) ~|#|list all columns print(df.keys()) ~|#|preview new excel container...</description>
-        <pubDate>Wed, 01 Jan 2020 18:48:05 -0500</pubDate>
-        <link>http://localhost:4000/cpp-stl/</link>
-        <guid isPermaLink="true">http://localhost:4000/cpp-stl/</guid>
-        
-        <category>welcome</category>
-        
-        <category>blog</category>
-        
-        <category>c++</category>
-        
-        <category>STL</category>
-      </item>
-    
-      <item>
-        <title>STL Thread Pool</title>
-        <description>&lt;p&gt;### std Thread Pool&lt;/p&gt; &lt;p&gt;In traditionly, using a thread has three phases: create(P1), excute(P2), distroy(P3). It is obviously a thread occupies time is P1+ P3, and the thread excute a task time is P2. It means if the task is a short-term task, the thread itself is very expensive. And if the count of threads is more than the CPU count, CPU need time to awake a thread and cost time too. So we need a thread pool, in the pool we will create enough threads according to the CPU number.&lt;/p&gt; &lt;p&gt;Here I will present how to use a std::thread...</description>
-        <pubDate>Wed, 01 Jan 2020 09:48:05 -0500</pubDate>
-        <link>http://localhost:4000/stl-threadpool/</link>
-        <guid isPermaLink="true">http://localhost:4000/stl-threadpool/</guid>
-        
-        <category>welcome</category>
-        
-        <category>blog</category>
-        
-        <category>c++</category>
-        
-        <category>STL</category>
-      </item>
-    
-      <item>
-        <title>Qt Thread Pool</title>
-        <description>&lt;p&gt;## Qt Thread Pool&lt;/p&gt; &lt;p&gt;In traditionly, using a thread has three phases: create(P1), excute(P2), distroy(P3). It is obviously a thread occupies time is P1+ P3, and the thread excute a task time is P2. It means if the task is a short-term task, the thread itself is very expensive. And if the count of threads is more than the CPU count, CPU need time to awake a thread and cost time too. So we need a thread pool, in the pool we will create enough threads according to the CPU number.&lt;/p&gt; &lt;p&gt;Here I will present how to use a QThread...</description>
-        <pubDate>Wed, 01 Jan 2020 09:48:05 -0500</pubDate>
-        <link>http://localhost:4000/qt-threadpool/</link>
-        <guid isPermaLink="true">http://localhost:4000/qt-threadpool/</guid>
-        
-        <category>welcome</category>
-        
-        <category>blog</category>
-        
-        <category>c++</category>
-        
-        <category>Qt</category>
-      </item>
-    
-      <item>
-        <title>Qt Thread Pool</title>
-        <description>&lt;p&gt;## Qt Thread Pool&lt;/p&gt; &lt;p&gt;In traditionly, using a thread has three phases: create(P1), excute(P2), distroy(P3). It is obviously a thread occupies time is P1+ P3, and the thread excute a task time is P2. It means if the task is a short-term task, the thread itself is very expensive. And if the count of threads is more than the CPU count, CPU need time to awake a thread and cost time too. So we need a thread pool, in the pool we will create enough threads according to the CPU number.&lt;/p&gt; &lt;p&gt;Here I will present how to use a QThread...</description>
-        <pubDate>Wed, 01 Jan 2020 09:48:05 -0500</pubDate>
-        <link>http://localhost:4000/qt-qml/</link>
-        <guid isPermaLink="true">http://localhost:4000/qt-qml/</guid>
-        
-        <category>welcome</category>
-        
-        <category>blog</category>
-        
-        <category>c++</category>
-        
-        <category>Qt</category>
-      </item>
-    
-      <item>
-        <title>QT learn</title>
-        <description>&lt;p&gt;## Python and spider&lt;/p&gt; &lt;p&gt;Excel is a popular and powerful spreadsheet.Pandas module allows your Python programs to read and modify Excel spreadsheet files, and do data science research. Here is a smaple to use Pandas to deal with data efficiently.&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ~|#|import the pandas to env. import pandas as pd ~|#|get thie excel file and the worksheet name. path ~|=| input(&quot;Enter file name : &quot;) st_name ~|=| input(&quot;Enter sheet name : &quot;) print(path, st_name) ~|#|open file and read the worksheet. df ~|=| pd.read_excel(path,sheet_name ~|=| st_name,index~|=|False) ~|#|list some sample print(df.head()) ~|#|list all columns print(df.keys()) ~|#|preview new excel container...</description>
-        <pubDate>Wed, 01 Jan 2020 09:48:05 -0500</pubDate>
-        <link>http://localhost:4000/qt-startwithqt/</link>
-        <guid isPermaLink="true">http://localhost:4000/qt-startwithqt/</guid>
-        
-        <category>welcome</category>
-        
-        <category>blog</category>
-        
-        <category>Qt</category>
-        
-        <category>QT</category>
-      </item>
-    
-      <item>
-        <title>Python and spider</title>
-        <description>&lt;p&gt;## Python and spider&lt;/p&gt; &lt;p&gt;Excel is a popular and powerful spreadsheet.Pandas module allows your Python programs to read and modify Excel spreadsheet files, and do data science research. Here is a smaple to use Pandas to deal with data efficiently.&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ~|#|import the pandas to env. import pandas as pd ~|#|get thie excel file and the worksheet name. path ~|=| input(&quot;Enter file name : &quot;) st_name ~|=| input(&quot;Enter sheet name : &quot;) print(path, st_name) ~|#|open file and read the worksheet. df ~|=| pd.read_excel(path,sheet_name ~|=| st_name,index~|=|False) ~|#|list some sample print(df.head()) ~|#|list all columns print(df.keys()) ~|#|preview new excel container...</description>
-        <pubDate>Wed, 01 Jan 2020 08:48:05 -0500</pubDate>
-        <link>http://localhost:4000/python-spyder/</link>
-        <guid isPermaLink="true">http://localhost:4000/python-spyder/</guid>
-        
-        <category>blog</category>
-        
-        <category>Python</category>
-        
-        <category>Python</category>
-      </item>
-    
-      <item>
-        <title>Python and ELK</title>
-        <description>&lt;p&gt;## Key words:PostMan python Elastic Logstash Kibana what is the ELK Stack? “ELK” is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana. Elasticsearch is a search and analytics engine. Logstash is a server‑side data processing pipeline that ingests data from multiple sources simultaneously, transforms it, and then sends it to a “stash” like Elasticsearch. Kibana lets users visualize data with charts and graphs in Elasticsearch.&lt;/p&gt; &lt;p&gt;Elasticsearch handles storage and provides a RESTful search and analytics endpoint.&lt;/p&gt; &lt;p&gt;Logstash is a server-side data processing pipeline that ingests, transforms and loads data.&lt;/p&gt; &lt;p&gt;Kibana lets you visualize your Elasticsearch data and...</description>
-        <pubDate>Wed, 01 Jan 2020 08:48:05 -0500</pubDate>
-        <link>http://localhost:4000/python-ELK/</link>
-        <guid isPermaLink="true">http://localhost:4000/python-ELK/</guid>
-        
-        <category>blog</category>
-        
-        <category>Python</category>
-        
-        <category>Python</category>
-      </item>
-    
-      <item>
-        <title>python 全栈开发</title>
-        <description>&lt;p&gt;## python 全栈开发&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/xiao987334176/p/8581927.html&quot;&gt;python 全栈开发，Day1(python介绍,变量,if,while&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href=&quot;https://www.cnblogs.com/xiao987334176/articles/8588312.html&quot;&gt;python 全栈开发，Day2 &lt;/a&gt;&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8602531.html) python 全栈开发，Day2(in,while else,格式化输出,逻辑运算符,int与bool转换,编码)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/articles/8589382.html) python 全栈开发，Day3&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8609471.html) python 全栈开发，Day3(数据类型,str切片,str常用操作方法,for循环)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/articles/8589401.html ) python 全栈开发，Day4&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8617686.html ) python 全栈开发，Day4(列表切片,增删改查,常用操作方法,元组,range,join)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/articles/8590232.html ) python 全栈开发，Day5&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8623847.html ) python 全栈开发，Day5(字典,增删改查,其他操作方法)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/articles/8590558.html ) python 全栈开发，Day6&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8633859.html ) python 全栈开发，Day6(is,小数据池,编码转换)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8651048.html ) python 全栈开发，Day7(元组转换,列表以及字典的坑,集合,关系测试,深浅copy,编码补充)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8657888.html ) python 全栈开发，Day8(文件操作)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8663688.html ) python 全栈开发，Day9(函数的初始，返回值，传参,三元运算)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8669958.html ) python 全栈开发，Day10(动态参数,命名空间,作用域,函数嵌套)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8676706.html ) python 全栈开发，Day11(函数名应用,闭包,装饰器初识,带参数以及带返回值的装饰器)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8692337.html ) python 全栈开发，Day12(函数的有用信息,带参数的装饰器,多个装饰器装饰一个函数)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8708782.html ) python 全栈开发，Day13(迭代器,生成器)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8717130.html ) python 全栈开发，Day14(列表推导式,生成器表达式,内置函数)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8746866.html ) python 全栈开发，Day15(递归函数,二分查找法)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8760344.html ) python 全栈开发，Day16(函数第一次考试)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8779911.html ) python 全栈开发，Day17(初识面向对象)&lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8795837.html ) python 全栈开发，Day18(对象之间的交互,类命名空间与对象,实例的命名空间,类的组合用法)&lt;/li&gt; &lt;li&gt; &lt;p&gt;(https://www.cnblogs.com/xiao987334176/p/8808206.html ) python 全栈开发，Day19(组合,组合实例,初识面向对象小结,初识继承)&lt;/p&gt; &lt;/li&gt; &lt;li&gt;(https://www.cnblogs.com/xiao987334176/p/8820661.html...</description>
-        <pubDate>Wed, 01 Jan 2020 07:48:05 -0500</pubDate>
-        <link>http://localhost:4000/python-full-stack/</link>
-        <guid isPermaLink="true">http://localhost:4000/python-full-stack/</guid>
-        
-        <category>blog</category>
-        
-        <category>Python</category>
-        
-        <category>Python</category>
-      </item>
-    
-      <item>
-        <title>Python and big data</title>
-        <description>&lt;p&gt;## Python and spider&lt;/p&gt; &lt;p&gt;Excel is a popular and powerful spreadsheet.Pandas module allows your Python programs to read and modify Excel spreadsheet files, and do data science research. Here is a smaple to use Pandas to deal with data efficiently.&lt;/p&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ~|#|import the pandas to env. import pandas as pd ~|#|get thie excel file and the worksheet name. path ~|=| input(&quot;Enter file name : &quot;) st_name ~|=| input(&quot;Enter sheet name : &quot;) print(path, st_name) ~|#|open file and read the worksheet. df ~|=| pd.read_excel(path,sheet_name ~|=| st_name,index~|=|False) ~|#|list some sample print(df.head()) ~|#|list all columns print(df.keys()) ~|#|preview new excel container...</description>
-        <pubDate>Wed, 01 Jan 2020 06:48:05 -0500</pubDate>
-        <link>http://localhost:4000/python-big-data/</link>
-        <guid isPermaLink="true">http://localhost:4000/python-big-data/</guid>
-        
-        <category>blog</category>
-        
-        <category>Python</category>
-        
-        <category>Python</category>
-      </item>
-    
-  </channel>
+				<pubDate>Fri, 03 Jan 2020 18:48:05 -0500</pubDate>
+				<link>http://localhost:4000/vtk/2020/01/03/vtk-course3.html</link>
+				<guid isPermaLink="true">http://localhost:4000/vtk/2020/01/03/vtk-course3.html</guid>
+			</item>
+		
+	</channel>
 </rss>

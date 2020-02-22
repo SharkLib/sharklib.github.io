@@ -13,7 +13,7 @@ category: Qt
 tags:
   - welcome
   - blog
-  - c++
+  - Qt
 author: Ron
 paginate: true
 ---

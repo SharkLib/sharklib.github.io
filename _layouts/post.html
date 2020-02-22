@@ -1,151 +1,92 @@
-<!DOCTYPE html>
-<html lang="{{ site.language }}" class="no-js">
-    {% include head.html %}
-    <body class="has-push-menu">
-        {% include minutes-to-read.html %}
-        {% include svg-icons.html %}
-        {% include header.html %}
-
-        <section class="post {% if site.two_columns_layout %}two-columns{% else %}one-column{% endif %}">
-            <article role="article" class="post-content">
-                <p class="post-info">
-                    {% if page.date %}
-                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
-                            {% include date.html date=page.date %}
-                        </time>
-                    {% endif %}
-                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>{{ minutesText }}</span>
-                </p>
-                <h1 class="post-title">{{ page.title }}</h1>
-                <p class="post-subtitle">{{ page.subtitle }}</p>
-
-                {% if page.image and paginator.activated == nil %}
-                    <img src="{{ page.image }}" alt="Featured image" class="post-cover">
-                {% endif %}
-
-                {% include pagination-post.html progressBar=true %}
-
-                {{ content }}
-
-                {% include pagination-post.html %}
-            </article>
-
-            {% if site.two_columns_layout %}
-                <aside class="see-also">
-                    <h2>See also</h2>
-                    <ul>
-                        {% assign next_posts = site.posts | where_exp:"post","post.is_generated != true" | where_exp:"post","post.path != page.path" %}
-                        {% assign shuffled_array = next_posts | shuffle %}
-                        {% for post in shuffled_array limit:3 %}
-                            <li>
-                                <a href="{{ post.url | prepend: site.baseurl }}">
-                                    {% if post.optimized_image %}
-                                        <img src="{{ post.optimized_image }}">
-                                    {% elsif post.image %}
-                                        <img src="{{ post.image }}">
-                                    {% else %}
-                                        <img src="/assets/img/off.jpg">
-                                    {% endif %}
-                                    <h3>{{ post.title }}</h3>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </aside>
-            {% endif %}
-
-        </section>
-
-        <!-- Add time bar only for pages without pagination -->
-        {% if paginator.activated == nil and site.show_time_bar == true %}
-            {% include time-bar.html %}
-            {% include recommendation.html %}
+---
+layout: default
+---
+{% assign trans = site.data.values[site.lan] %}
+<div class="well article">
+        <h2><a href="{{ site.baseurl}}{{ page.url }}">{{ page.title }}</a></h2>
+        <span class="post-date">
+            {% assign date_format = site.date_format.title %}
+            {{ page.date | date: date_format }}
+        </span>
+        <hr style="border-top:1px solid #28323C;"/>
+    {% if site.comments and page.comments %}
+        {% if site.disqus != '' %}
+        <p class="author"><a href="#disqus_thread" data-disqus-identifier="{{ page.url | slugify }}">Comments</a></p>
+        {% elsif site.isso != '' %}
+        <p class="author"><a href="{{ site.baseurl }}{{ page.url }}{{ site.isso_suffix }}#isso-thread">Comments</a></p>
         {% endif %}
+    {% endif %}
+    <div class="post-content">
+    {{ content }}
+    <hr style="border-top:1px solid #28323C;"/>
 
-        <!-- Show modal if the post is the last one -->
-        {% if paginator.is_last and site.show_modal_on_finish_post %}
-            {% include modal.html title="You made it!" subtitle="Why don't you try another?" %}
-        {% endif %}
+    <!-- tags and categories under post -->
+    {% unless page.categories == empty %}
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-folder-open"></i></li>
+      {% assign categories_list = page.categories %}
+      {% if categories_list.first[0] == null %}
+        {% for category in categories_list %} 
+            <li class="icon-style"><a href="{{ site.baseurl }}/categories.html">
+                {{ category | join: "/" }} <span>({{ site.categories[category].size }})</span>
+                {% unless forloop.last %},{% endunless %}
+            </a></li>
+        {% endfor %}
+      {% else %}
+        {% for category in categories_list %} 
+            <li class="icon-style"><a href="{{ site.baseurl }}/categories.html">
+                {{ category[0] | join: "/" }} <span>/{{ category[1].size }})</span>
+            </a></li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+    {% endunless %}  
 
-        <!-- Show modal before user leaves the page -->
-        {% if site.show_modal_on_exit %}
-            {% include modal.html title="Don't go yet!" subtitle="You may also like..." closed=true showOnExit=true %}
-        {% endif %}
+    {% unless page.tags == empty %}
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-tags"></i></li>
+      {% assign tags_list = page.tags %}
+      {% if tags_list.first[0] == null %}
+        {% for tag in tags_list %} 
+            <li class="icon-style">
+                <a href="{{ site.baseurl }}/tags.html">
+                {{ tag }} <span>({{ site.tags[tag].size }})</span>
+                {% unless forloop.last %},{% endunless %}
+                </a>
+            </li>
+        {% endfor %}
+      {% else %}
+        {% for tag in tags_list %} 
+            <li class="icon-style">
+                <a href="{{ site.baseurl }}/tags.html">
+                    {{ tag[0] }} <span>({{ tag[1].size }})</span>
+                    {% unless forloop.last %},{% endunless %}
+                </a>
+            </li>
+           
+        {% endfor %}
+      {% endif %}
+      {% assign tags_list = nil %}
+    </ul>
+    {% endunless %}  
 
-        {% include share.html %}
-        {% include author.html %}
-        {% include comments.html %}
-        {% include footer.html %}
-
-        {% assign author = site.authors | where: "name", post.author | first %}
-
-        {% assign author_urls = '' %}
-        {% if author.github_username %}
-            {% assign author_urls = author_urls | append: '"https://github.com/' | append: author.github_username | append: '",' %}
+    </div>
+    {% if page.comments %}
+        {% if site.disqus != '' %}
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+        {% elsif site.isso != '' %}
+        <section id="isso-thread"></section>
         {% endif %}
-        {% if author.facebook_username %}
-            {% assign author_urls = author_urls | append: '"https://www.facebook.com/' | append: author.facebook_username | append: '",' %}
-        {% endif %}
-        {% if author.twitter_username %}
-            {% assign author_urls = author_urls | append: '"https://twitter.com/' | append: author.twitter_username | append: '",' %}
-        {% endif %}
-        {% if author.medium_username %}
-            {% assign author_urls = author_urls | append: '"https://medium.com/@' | append: author.medium_username | append: '",' %}
-        {% endif %}
-        {% if author.instagram_username %}
-            {% assign author_urls = author_urls | append: '"https://www.instagram.com/' | append: author.instagram_username | append: '",' %}
-        {% endif %}
-        {% if author.linkedin_username %}
-            {% assign author_urls = author_urls | append: '"https://www.linkedin.com/in/' | append: author.linkedin_username | append: '",' %}
-        {% endif %}
-
-        <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "BlogPosting",
-            "name": "{{ page.title }}",
-            "headline": "{{ page.subtitle }}",
-            "description": "{{ page.description }}",
-            "image": "{{ page.image }}",
-            "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-            "articleBody": "{{ content | strip_html | xml_escape | textilize }}",
-            "wordcount": "{{ content | number_of_words }}",
-            "inLanguage": "{{ site.language }}",
-            "dateCreated": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "datePublished": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "dateModified": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "author": {
-                "@type": "Person",
-                "name": "{{ author.display_name }}",
-                {% if author.photo %}
-                "image": "{{ author.photo }}",
-                {% else %}
-                "image": {{ "/assets/img/user.jpg" | prepend: site.baseurl | prepend: site.url }},
-                {% endif %}
-                "jobTitle": "{{ author.position }}",
-                "url": "{{ author.url | prepend: site.baseurl | prepend: site.url }}",
-                "sameAs": [
-                    {{ author_urls | split: "," | join: "," }}
-                ]
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "{{ site.name }}",
-                "url": "{{ site.url }}{{site.baseurl}}/",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "{{ site.url }}{{site.baseurl}}/assets/img/blog-image.png",
-                    "width": "600",
-                    "height": "315"
-                }
-            },
-            "mainEntityOfPage": "True",
-            "genre": "{{ page.category }}",
-            "articleSection": "{{ page.category }}",
-            "keywords": [{{ page.tags | join: '","' | append: '"' | prepend: '"' }}]
-        }
-        </script>
-    </body>
-</html>
+    {% endif %}
+</div>
+<div class="pagination">
+    {% if page.next %}
+    <a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next">{{ trans.newer_post }}</a>
+    {% endif %}
+    {% if page.previous %}
+    <a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">{{ trans.older_post }}</a>
+    {% endif %}
+</div>
