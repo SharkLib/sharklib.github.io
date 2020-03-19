@@ -10,6 +10,14 @@
         </url>
     
         <url>
+            <loc>http://localhost:4000/about.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
             <loc>http://localhost:4000/about/</loc>
             
                 <changefreq>monthly</changefreq>
@@ -18,7 +26,23 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/blog/</loc>
+            <loc>http://localhost:4000/archive.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/bigdata.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/blog.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -34,7 +58,15 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/code/</loc>
+            <loc>http://localhost:4000/categories.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/code.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -50,16 +82,7 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/Cpp/</loc>
-            
-                <changefreq>weekly</changefreq>
-                <priority>1</priority>
-                <lastmod>2020-02-21</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>http://localhost:4000/category/css/</loc>
+            <loc>http://localhost:4000/cpp.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -67,7 +90,15 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/diet/</loc>
+            <loc>http://localhost:4000/category/css.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/diet.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -83,25 +114,7 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/</loc>
-            
-                <changefreq>weekly</changefreq>
-                <priority>1</priority>
-                <lastmod>2020-02-21</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>http://localhost:4000/js/</loc>
-            
-                <changefreq>weekly</changefreq>
-                <priority>1</priority>
-                <lastmod>2020-02-21</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>http://localhost:4000/js/</loc>
+            <loc>http://localhost:4000/flutter.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -109,7 +122,56 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/life/</loc>
+            <loc>http://localhost:4000/food.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/js/</loc>
+            
+                <changefreq>weekly</changefreq>
+                <priority>1</priority>
+                <lastmod>2020-03-18</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/js.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/life.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/links.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/assets/css/main.css</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -125,7 +187,15 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/music/</loc>
+            <loc>http://localhost:4000/category/music.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/src/img/icons/preloader.svg</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -149,16 +219,31 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/python/</loc>
+            <loc>http://localhost:4000/python.html</loc>
             
-                <changefreq>weekly</changefreq>
-                <priority>1</priority>
-                <lastmod>2020-02-21</lastmod>
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/qt.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
             
         </url>
     
         <url>
             <loc>http://localhost:4000/assets/img/icons/read.svg</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/src/img/icons/read.svg</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -182,7 +267,7 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/tips/</loc>
+            <loc>http://localhost:4000/tags.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -190,7 +275,7 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/travel/</loc>
+            <loc>http://localhost:4000/category/tips.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -198,7 +283,7 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/tutorial/</loc>
+            <loc>http://localhost:4000/category/travel.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -206,7 +291,39 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/category/work/</loc>
+            <loc>http://localhost:4000/category/tutorial.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/vtk.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/category/work.html</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/page2/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/page3/</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -215,171 +332,200 @@
     
     
         <url>
-            <loc>http://localhost:4000/vtk-course12/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/12/vtk-course12.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-12</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course11/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/11/vtk-course11.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-11</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course10/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/10/vtk-course10.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-10</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course9/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/09/vtk-course9.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-09</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course8/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/08/vtk-course8.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-08</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course7/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/07/vtk-course7.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-07</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course6/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/06/vtk-course6.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-06</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course5/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/05/vtk-course5.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-05</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course4/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/04/vtk-course4.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-04</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course3/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/03/vtk-course3.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-03</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course2/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/02/vtk-course2.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-02</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/vtk-course1/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/01/vtk-course1.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/cpp-vtk/</loc>
+            <loc>http://localhost:4000/vtk/2020/01/01/cpp-vtk.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/food-1/</loc>
+            <loc>http://localhost:4000/food/2020/01/01/food-1.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/cpp-stl/</loc>
+            <loc>http://localhost:4000/stl/2020/01/01/cpp-stl.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/stl-threadpool/</loc>
+            <loc>http://localhost:4000/stl/2020/01/01/stl-threadpool.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/qt-threadpool/</loc>
+            <loc>http://localhost:4000/qt/2020/01/01/qt-threadpool.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/qt-qml/</loc>
+            <loc>http://localhost:4000/qt/2020/01/01/qt-qml.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/qt-startwithqt/</loc>
+            <loc>http://localhost:4000/qt/2020/01/01/qt-startwithqt.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/python-spyder/</loc>
+            <loc>http://localhost:4000/python/2020/01/01/python-spyder.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/python-ELK/</loc>
+            <loc>http://localhost:4000/python/2020/01/01/python-ELK.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/python-full-stack/</loc>
+            <loc>http://localhost:4000/python/2020/01/01/python-full-stack.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
         <url>
-            <loc>http://localhost:4000/python-big-data/</loc>
+            <loc>http://localhost:4000/python/2020/01/01/python-big-data.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
         </url>
     
+        <url>
+            <loc>http://localhost:4000/other/2017/09/19/README.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2017-09-19</lastmod>
+        </url>
     
         <url>
-            <loc>http://localhost:4000/authors/automan/</loc>
-            <changefreq>monthly</changefreq>
-            <priority>0.5</priority>
+            <loc>http://localhost:4000/programmer/2017/09/15/ascii-art-and-text.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2017-09-15</lastmod>
         </url>
+    
+        <url>
+            <loc>http://localhost:4000/jekyll/2017/09/05/welcome-to-jekyll.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2017-09-05</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/jekyll/2017/09/05/reademe-of-jekyll.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2017-09-05</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/jekyll/2017/09/05/another-copy-of-the-reademe-of-jekyll.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2017-09-05</lastmod>
+        </url>
+    
     
 </urlset>

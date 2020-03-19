@@ -2,46 +2,58 @@
 layout: default
 ---
 {% assign trans = site.data.values[site.lan] %}
-{% for post in paginator.posts %}
-<div class="well article">
 
-    <span class="post-date">
-        <!--
-        {% assign d = post.date | date: "%d" | plus:'0' %}
-        {{ post.date | date: "%B" }}
-        {% case d %}
-        {% when 1 or 21 or 31 %}{{ d }}st,
-        {% when 2 or 22 %}{{ d }}nd,
-        {% when 3 or 23 %}{{ d }}rd,
-        {% else %}{{ d }}th,
-        {% endcase %}
-        {{ post.date | date: "%Y" }}
-        -->
-        {% assign date_format = site.date_format.title %}
-        {{ post.date | date: date_format }}
-    </span>
-    
-    <h2>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </h2>
-    
-    <div class="post-description">
-        {{ post.description }}
-    </div>
-    
+
+
+<div>
+
+
+  <h1 align= center>Hello I am Ron</h1>
+  <h4 align= center >I am a senior software developer.</h4>
+
+  <table align= center>
+    <tr>
+      <td width="150"><img src="assets/img/fast.png" width="64" height="64"> </td><td width="150"><img src="assets/img/fast.png" width="64" height="64"> </td> 
+      <td width="150"><img src="assets/img/fast.png" width="64" height="64"> </td> <td width="150"><img src="assets/img/fast.png" width="64" height="64"> </td>
+    </tr>
+    <tr>
+      <td>Fast</td> <td>Responsive</td> <td>Intuitive</td> <td>Dynamic</td>
+    </tr>
+    <tr>
+      <td>Fast load times and lag free interaction, my highest priority.</td>
+      <td>My layouts will work on any device, big or small.</td> 
+      <td>Strong preference for easy to use, intuitive UX/UI.</td> 
+      <td>Websites don't have to be static, I love making pages come to life.</td>
+    </tr>
+  </table>
+ <br>
+<div width= "60%">
+
+ 
+<div class="container">
+  <div class="skills html" style="width: 80%; height:30px; background-color: #4CAF50;color: rgb(247, 238, 238);">C++ 90%</div>
 </div>
-{% endfor %}
 
-<div class="pagination">
-  {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <a class="btn btn-default" href="{{ site.baseurl}}/index.html" class="previous">Newer</a>
-      {% else %}
-        <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.previous_page }}" class="previous">Newer</a>
-      {% endif %}
-  {% endif %}
-  <span class="page_number ">{{ trans.page }}: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a class="btn btn-default" href="{{ site.baseurl}}/page{{ paginator.next_page }}" class="next">Older</a>
-  {% endif %}
+
+<div class="container">
+  <div class="skills css" style="width: 75%; height:30px;background-color: rgb(84, 74, 223);color: rgb(247, 238, 238);"> Qt 85%</div>
+</div>
+
+
+<div class="container">
+  <div class="skills js" style="width: 70%; height:30px;background-color: rgb(88, 162, 204); color: rgb(247, 238, 238);"> VTK 80%</div>
+</div>
+
+
+<div class="container">
+  <div class="skills php" style="width: 65%; height:30px;background-color: rgb(216, 79, 235);color: rgb(247, 238, 238);">Python 75%</div>
+</div>
+
+<div class="container">
+  <div class="skills php" style="width: 60%; height:30px;background-color: rgb(51, 66, 207);color: rgb(247, 238, 238);">Flutter 65%</div>
+</div>
+
+</div>
+ 
+
 </div>
