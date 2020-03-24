@@ -267,7 +267,7 @@ VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
 			</item>
 		
 			<item>
-				<title>Course 7 First VTK project</title>
+				<title>VTK 7 - Cube and Texture</title>
 				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
 
 &lt;p&gt;Set surface for the project&lt;/p&gt;
@@ -319,7 +319,7 @@ VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
 			</item>
 		
 			<item>
-				<title>Course 6 First VTK project</title>
+				<title>VTK 6 - Cube</title>
 				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
 
 &lt;p&gt;Set surface for the project&lt;/p&gt;
@@ -371,7 +371,7 @@ VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
 			</item>
 		
 			<item>
-				<title>Course 5 - Cone and Box widget</title>
+				<title>VTK 5 - Cone and Box widget</title>
 				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
 
 &lt;p&gt;Set surface for the project&lt;/p&gt;
@@ -423,7 +423,7 @@ VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
 			</item>
 		
 			<item>
-				<title>Course 4 - Cone and Axes</title>
+				<title>VTK 4 - Cone and Axes</title>
 				<description>&lt;p&gt;Base on couse 2, Changed step 4 to&lt;/p&gt;
 
 &lt;ul&gt;
@@ -486,7 +486,7 @@ You will get:
 			</item>
 		
 			<item>
-				<title>Course 3 - Cone and Outline</title>
+				<title>VTK 3 - Cone and Outline</title>
 				<description>&lt;p&gt;Base on couse 2, Changed step 4 to&lt;/p&gt;
 
 &lt;ul&gt;
