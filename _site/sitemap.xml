@@ -142,7 +142,7 @@
             
                 <changefreq>weekly</changefreq>
                 <priority>1</priority>
-                <lastmod>2020-03-24</lastmod>
+                <lastmod>2020-03-28</lastmod>
             
         </url>
     
@@ -195,7 +195,7 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/src/img/icons/preloader.svg</loc>
+            <loc>http://localhost:4000/assets/img/icons/preloader.svg</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -203,7 +203,7 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/assets/img/icons/preloader.svg</loc>
+            <loc>http://localhost:4000/src/img/icons/preloader.svg</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -260,6 +260,14 @@
     
         <url>
             <loc>http://localhost:4000/sitemap.xml</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/stories.html</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -324,6 +332,38 @@
     
         <url>
             <loc>http://localhost:4000/page3/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/page4/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/page5/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/page6/</loc>
+            
+                <changefreq>monthly</changefreq>
+                <priority>0.5</priority>
+            
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/page7/</loc>
             
                 <changefreq>monthly</changefreq>
                 <priority>0.5</priority>
@@ -437,7 +477,287 @@
         </url>
     
         <url>
-            <loc>http://localhost:4000/stl/2020/01/01/stl-threadpool.html</loc>
+            <loc>http://localhost:4000/story/2020/01/01/story9.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story8.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story7.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story6.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story5.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story40.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story4.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story39.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story38.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story37.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story36.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story35.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story34.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story33.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story32.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story31.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story30.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story3.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story29.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story28.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story27.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story26.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story25.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story24.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story23.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story22.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story21.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story20.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story2.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story19.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story18.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story17.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story16.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story15.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story14.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story13.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story12.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story11.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story10.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story1.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/story/2020/01/01/story.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
@@ -459,6 +779,13 @@
     
         <url>
             <loc>http://localhost:4000/qt/2020/01/01/qt-startwithqt.html</loc>
+            <changefreq>weekly</changefreq>
+            <priority>0.8</priority>
+            <lastmod>2020-01-01</lastmod>
+        </url>
+    
+        <url>
+            <loc>http://localhost:4000/stl/2020/01/01/stl-threadpool.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2020-01-01</lastmod>
@@ -515,13 +842,6 @@
     
         <url>
             <loc>http://localhost:4000/jekyll/2017/09/05/reademe-of-jekyll.html</loc>
-            <changefreq>weekly</changefreq>
-            <priority>0.8</priority>
-            <lastmod>2017-09-05</lastmod>
-        </url>
-    
-        <url>
-            <loc>http://localhost:4000/jekyll/2017/09/05/another-copy-of-the-reademe-of-jekyll.html</loc>
             <changefreq>weekly</changefreq>
             <priority>0.8</priority>
             <lastmod>2017-09-05</lastmod>
