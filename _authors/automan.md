@@ -11,7 +11,7 @@ optimized_image: >-
   /assets/img/automan.jpeg
 category: Software
 tags:
-  - welcome
+  - project
   - blog
 author: sharklib
 paginate: true

@@ -11,7 +11,7 @@ optimized_image: >-
   /assets/img/Qtcreator-overview.png
 category: STL
 tags:
-  - welcome
+  
   - blog
   - c++
 author: Ron

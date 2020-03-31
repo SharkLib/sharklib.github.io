@@ -215,7 +215,7 @@ VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
 			</item>
 		
 			<item>
-				<title>Course 8 First VTK project</title>
+				<title>Course 8 Cartoon</title>
 				<description>&lt;p&gt;It is very import. I used lots of time to start my first VTK project. test&lt;/p&gt;
 
 &lt;p&gt;Set surface for the project&lt;/p&gt;
@@ -233,32 +233,684 @@ VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
 
 &lt;p&gt;the real example to create a VTK Object and show&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//step 1, create a data source;
-  vtkCylinderSource *cylinder = vtkCylinderSource::New();
-  cylinder-&amp;gt;SetHeight( 3.0 );
-  cylinder-&amp;gt;SetRadius( 1.0 );
-  cylinder-&amp;gt;SetResolution( 4 );
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+MainWindow::MainWindow(QWidget *parent)
+  : QMainWindow(parent)
+  , ui(new Ui::MainWindow)
+{
+  ui-&amp;gt;setupUi(this);
+  setWindowTitle(&quot;VTK 8  - Multi-Object&quot;);
 
-  //step 2: map data to a pipeline
-  vtkPolyDataMapper *cylinderMapper = vtkPolyDataMapper::New();
-  cylinderMapper-&amp;gt;SetInputConnection( cylinder-&amp;gt;GetOutputPort() );
+  //step 0: set it to a window:
+  auto vw = new  QVTKOpenGLWidget(this) ;
+   renWin = vw-&amp;gt;GetRenderWindow();
+   createTexture();
 
-  //step 3: create a actor and represente the pipeline
-  vtkActor *actor = vtkActor::New();
-  actor-&amp;gt;SetMapper( cylinderMapper );
 
-  //step4 :create a render and set the actor to it
-  vtkRenderer *render= vtkRenderer::New();
-  render-&amp;gt;AddActor( actor );
+  render= vtkRenderer::New();
+
   render-&amp;gt;SetBackground( 0.1, 0.2, 0.4 );
 
+  createTexture();
+  //createAxis();
+  createHead();
+  createBody();
+  createHand(0,0,0,0);
 
-  //step 5: set it to a window:
-  auto vw = new  QVTKOpenGLWidget(this) ;
-  vtkRenderWindow *renWin = vw-&amp;gt;GetRenderWindow();
-  ui-&amp;gt;tabWidget-&amp;gt;addTab( vw, &quot;My Cylinder&quot;);
+  vtkSmartPointer&amp;lt;vtkAssembly&amp;gt; ass = vtkSmartPointer&amp;lt;vtkAssembly&amp;gt;::New() ;
+
+  ltAssembly &amp;lt;&amp;lt; ass;
+
+  ass-&amp;gt;AddPart(header.getActor());//this can be multiple
+  ass-&amp;gt;AddPart(body.getActor());//this can be multiple
+
+  //cubeActor-&amp;gt;SetTexture(texture);
+  ass-&amp;gt;AddPart(hand_left.getActor());//this can be multiple
+  ass-&amp;gt;AddPart(hand_right.getActor());//this can be multiple
+  ass-&amp;gt;AddPart(foot_left.getActor());//this can be multiple
+  ass-&amp;gt;AddPart(foot_right.getActor());//this can be multiple
+
+  rotateHand(hand_left,30,1,0,0, 0.2,-0.2,0);
+  rotateHand(hand_right,-30,0,0,0, -0.1,-0.2,0);
+  ass-&amp;gt;SetOrigin(0,0,0);
+  render-&amp;gt;AddActor(ass);
+
+  //render-&amp;gt;AddActor( createCubeerrr());
+
+  //setBodyTexture();
+  setHeadTexture();
+  hand_left.setTexture(&quot;/Users/rong/work/bb.jpeg&quot;);
+  hand_right.setTexture(&quot;/Users/rong/work/bb.jpeg&quot;);
+  foot_left.setTexture(&quot;/Users/rong/work/bb.jpeg&quot;);
+  foot_right.setTexture(&quot;/Users/rong/work/bb.jpeg&quot;);
+
+  body.setTexture(&quot;/Users/rong/dfnet/suit.jpg&quot;);
+
+
+  //绘制
+     vtkCamera *camera = vtkCamera::New();
+    camera-&amp;gt;SetPosition(1,1,20);
+    camera-&amp;gt;SetFocalPoint(0,0,0);
+
+  render-&amp;gt;SetActiveCamera(camera);
+
   renWin-&amp;gt;AddRenderer( render );
-  renWin-&amp;gt;SetSize( 300, 300 );
+
+
+  //setCentralWidget(vw);
+  QGridLayout * layout1 = new QGridLayout(this);
+  vw-&amp;gt;setSizePolicy( QSizePolicy::Expanding,QSizePolicy::Expanding);
+  layout1-&amp;gt;addWidget(vw,0,0);
+  ui-&amp;gt;frame-&amp;gt;setLayout(layout1);
+
+
+  comBox = new QComboBox(this);
+  QStringList lt;
+  for (int n=0; n&amp;lt; 9 ;n++)
+    lt &amp;lt;&amp;lt; &quot;item- &quot;+QString::number(n);
+  comBox-&amp;gt;addItems( lt);
+  ui-&amp;gt;toolBar-&amp;gt;addWidget(comBox);
+
+
+  connect(ui-&amp;gt;horizontalSlider_2,&amp;amp;QSlider::valueChanged, this, &amp;amp;MainWindow::on_mv_valueChanged);
+  connect(ui-&amp;gt;horizontalSlider_3,&amp;amp;QSlider::valueChanged, this, &amp;amp;MainWindow::on_mv_valueChanged);
+  connect(ui-&amp;gt;horizontalSlider,&amp;amp;QSlider::valueChanged, this, &amp;amp;MainWindow::on_mv_valueChanged);
+
+  connect(ui-&amp;gt;verticalSlider,&amp;amp;QSlider::valueChanged, this, &amp;amp;MainWindow::on_rotate_valueChanged);
+  connect(ui-&amp;gt;verticalSlider_2,&amp;amp;QSlider::valueChanged, this, &amp;amp;MainWindow::on_rotate_valueChanged);
+  connect(ui-&amp;gt;verticalSlider_3,&amp;amp;QSlider::valueChanged, this, &amp;amp;MainWindow::on_rotate_valueChanged);
+
+}
+
+MainWindow::~MainWindow()
+{
+  delete ui;
+}
+
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; MainWindow::createHead()
+{
+
+  vtkSmartPointer&amp;lt;vtkSphereSource&amp;gt; coneSource = vtkSmartPointer&amp;lt;vtkSphereSource&amp;gt;::New();
+  coneSource-&amp;gt;SetRadius(1);
+  //coneSource-&amp;gt;SetHeight(2);
+  coneSource-&amp;gt;SetCenter(0, 3, 0);
+
+  header.setSource( coneSource);
+
+  //render-&amp;gt;AddActor(header.getActor());
+  return header.getActor();
+}
+
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; MainWindow::createBody()
+{
+  vtkSmartPointer&amp;lt;vtkCubeSource&amp;gt; cubeSource = vtkSmartPointer&amp;lt;vtkCubeSource&amp;gt;::New();
+
+  cubeSource-&amp;gt;SetCenter(0,1,0);
+  cubeSource-&amp;gt;SetXLength(2);
+  cubeSource-&amp;gt;SetYLength(2.5);
+  cubeSource-&amp;gt;SetZLength(1);
+  body.setSource(cubeSource);
+  //render-&amp;gt;AddActor(body.getActor());
+  return body.getActor();
+}
+
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; MainWindow::createHand(float x,float y,float z,float angle)
+{
+  vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt; cylindeSourceLeft = vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;:: New();
+  cylindeSourceLeft-&amp;gt;SetCenter(2,1,0);
+  cylindeSourceLeft-&amp;gt;SetHeight(1);
+  cylindeSourceLeft-&amp;gt;SetRadius(0.3);
+
+  hand_left.setSource(cylindeSourceLeft);
+
+  //render-&amp;gt;AddActor(hand_left.getActor());
+
+
+  vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt; cylindeSourceRight = vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;:: New();
+  cylindeSourceRight-&amp;gt;SetCenter(-2,1,0);
+  cylindeSourceRight-&amp;gt;SetHeight(1);
+  cylindeSourceRight-&amp;gt;SetRadius(0.3);
+
+  hand_right.setSource(cylindeSourceRight);
+
+  //render-&amp;gt;AddActor(hand_right.getActor());
+
+  vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt; cylindeSourceFL = vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;:: New();
+  cylindeSourceFL-&amp;gt;SetCenter(-0.6,-1,0);
+  cylindeSourceFL-&amp;gt;SetHeight(1);
+  cylindeSourceFL-&amp;gt;SetRadius(0.3);
+
+  foot_left.setSource(cylindeSourceFL);
+
+  //render-&amp;gt;AddActor(foot_left.getActor());
+
+
+  vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt; cylindeSourceFR = vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;:: New();
+  cylindeSourceFR-&amp;gt;SetCenter(0.6,-1,0);
+  cylindeSourceFR-&amp;gt;SetHeight(1);
+  cylindeSourceFR-&amp;gt;SetRadius(0.3);
+
+  foot_right.setSource(cylindeSourceFR);
+
+  //render-&amp;gt;AddActor(foot_right.getActor());
+
+  return hand_left.getActor();
+
+//  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; dataMap = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+
+//  dataMap-&amp;gt;SetInputConnection( cylindeSource-&amp;gt;GetOutputPort());
+
+//  vtkSmartPointer&amp;lt;vtkActor&amp;gt; act = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+//  act-&amp;gt;SetMapper(dataMap);
+
+//  vtkSmartPointer&amp;lt;vtkTransform&amp;gt; transform = vtkSmartPointer&amp;lt;vtkTransform&amp;gt;::New();
+//  //transform-&amp;gt;RotateWXYZ(double angle, double x, double y, double z);
+//  transform-&amp;gt;RotateWXYZ(angle, 0, 0, 1);
+
+//  transform-&amp;gt;Translate(x,y,z);
+//  // transform-&amp;gt;RotateWXYZ(90, 0, 0, 1);
+//  vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt; transformFilter =
+//      vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt;::New();
+
+//  transformFilter-&amp;gt;SetTransform(transform);
+//  transformFilter-&amp;gt;SetInputConnection(cylindeSource-&amp;gt;GetOutputPort());
+//  transformFilter-&amp;gt;Update();
+
+//  act-&amp;gt;SetUserTransform(transform);
+
+//  render-&amp;gt;AddActor(act);
+
+
+
+//  auto polydata = cylindeSource-&amp;gt;GetOutput();
+//  auto dd = cylindeSource-&amp;gt;GetCenter();
+//  qDebug()  &amp;lt;&amp;lt;&quot; point: =------------------------ &quot;;// &amp;lt;&amp;lt; dd[0] &amp;lt;&amp;lt; dd[1] &amp;lt;&amp;lt; dd[2];
+//  vtkPoints *pts = polydata-&amp;gt;GetPoints();
+//  for(int i=0; i &amp;lt; polydata-&amp;gt;GetNumberOfPoints(); i++)
+//  {
+//    auto dd = polydata-&amp;gt;GetPoint(i);
+//    qDebug()  &amp;lt;&amp;lt;&quot; Center: &quot; &amp;lt;&amp;lt; dd[0] &amp;lt;&amp;lt; dd[1] &amp;lt;&amp;lt; dd[2];
+
+//  }
+
+
+
+
+
+}
+
+void MainWindow::createTexture()
+{
+
+  vtkSmartPointer&amp;lt;vtkBMPReader&amp;gt; texReader =
+      vtkSmartPointer&amp;lt;vtkBMPReader&amp;gt;::New();//vtkJPEGReader
+  texReader-&amp;gt;SetFileName(&quot;/Users/rong/dfnet/suit.bmp&quot;);
+
+  texture = vtkSmartPointer&amp;lt;vtkTexture&amp;gt;::New();
+  texture-&amp;gt;SetInputConnection(texReader-&amp;gt;GetOutputPort());
+  texture-&amp;gt;InterpolateOn();
+
+
+}
+
+void MainWindow::rotateHand(MyVTKObject&amp;lt;vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;&amp;gt; obj, float angle, int x, int y , int z,float mx, float my, float mz)
+{
+  vtkSmartPointer&amp;lt;vtkTransform&amp;gt; transform = vtkSmartPointer&amp;lt;vtkTransform&amp;gt;::New();
+  //transform-&amp;gt;RotateWXYZ(double angle, double x, double y, double z);
+  transform-&amp;gt;RotateWXYZ(angle, 0, 0, 1);
+
+  transform-&amp;gt;Translate(mx,my,mz);
+  // transform-&amp;gt;RotateWXYZ(90, 0, 0, 1);
+  vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt; transformFilter =
+      vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt;::New();
+
+  transformFilter-&amp;gt;SetTransform(transform);
+  transformFilter-&amp;gt;SetInputConnection(obj.getSource()-&amp;gt;GetOutputPort());
+  transformFilter-&amp;gt;Update();
+
+  obj.getActor()-&amp;gt;SetUserTransform(transform);
+}
+
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; MainWindow::createFoot(float x,float y,float z)
+{
+  vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt; cylindeSource = vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;:: New();
+  cylindeSource-&amp;gt;SetCenter(0,0,0);
+  cylindeSource-&amp;gt;SetHeight(1);
+  cylindeSource-&amp;gt;SetRadius(0.1);
+
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; dataMap = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+
+  dataMap-&amp;gt;SetInputConnection( cylindeSource-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt; act = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+  act-&amp;gt;SetMapper(dataMap);
+
+  vtkSmartPointer&amp;lt;vtkTransform&amp;gt; transform = vtkSmartPointer&amp;lt;vtkTransform&amp;gt;::New();
+  //transform-&amp;gt;RotateWXYZ(double angle, double x, double y, double z);
+  // transform-&amp;gt;RotateWXYZ(80, 0, 0, 1);
+
+  transform-&amp;gt;Translate(x,y,z);
+  // transform-&amp;gt;RotateWXYZ(90, 0, 0, 1);
+  vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt; transformFilter =
+      vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt;::New();
+
+  transformFilter-&amp;gt;SetTransform(transform);
+  transformFilter-&amp;gt;SetInputConnection(cylindeSource-&amp;gt;GetOutputPort());
+  transformFilter-&amp;gt;Update();
+
+  act-&amp;gt;SetUserTransform(transform);
+
+  render-&amp;gt;AddActor(act);
+  return act;
+}
+
+void MainWindow::createCenter()
+{
+  //几何数据
+    vtkSmartPointer&amp;lt;vtkPoints&amp;gt; points=vtkSmartPointer&amp;lt;vtkPoints&amp;gt;::New();
+  //    points-&amp;gt;SetNumberOfPoints(5);//此行可有可无
+    points-&amp;gt;InsertPoint(0,0,0,0);
+    points-&amp;gt;InsertPoint(1,1,0.0,0);
+    points-&amp;gt;InsertPoint(2,2,0,0);
+    points-&amp;gt;InsertPoint(3,3,0,0);
+    points-&amp;gt;InsertPoint(4,0,3,0);
+    //拓扑数据
+    vtkSmartPointer&amp;lt;vtkPolyVertex&amp;gt;polyVertex=vtkSmartPointer&amp;lt;vtkPolyVertex&amp;gt;::New();
+    polyVertex-&amp;gt;GetPointIds()-&amp;gt;SetNumberOfIds(5);//必须设置Id个数，否则可以编译，不能运行
+    polyVertex-&amp;gt;GetPointIds()-&amp;gt;SetId(0,0);//第一个参数是几何point的ID号，第2个参数是拓扑中的Id号
+    polyVertex-&amp;gt;GetPointIds()-&amp;gt;SetId(1,1);
+    polyVertex-&amp;gt;GetPointIds()-&amp;gt;SetId(2,2);
+    polyVertex-&amp;gt;GetPointIds()-&amp;gt;SetId(3,3);
+    polyVertex-&amp;gt;GetPointIds()-&amp;gt;SetId(4,4);
+    //属性数据
+    vtkSmartPointer&amp;lt;vtkFloatArray&amp;gt;pointsScalars=vtkSmartPointer&amp;lt;vtkFloatArray&amp;gt;::New();
+    pointsScalars-&amp;gt;SetNumberOfTuples(5);//此行可有可无
+    pointsScalars-&amp;gt;InsertValue(0,0);//第1个参数是points点的Id，第2个参数是该点的属性值
+    pointsScalars-&amp;gt;InsertValue(1,0);//第1个参数是points点的Id，第2个参数是该点的属性值
+    pointsScalars-&amp;gt;InsertValue(2,0);//第1个参数是points点的Id，第2个参数是该点的属性值
+    pointsScalars-&amp;gt;InsertValue(3,0);//第1个参数是points点的Id，第2个参数是该点的属性值
+    pointsScalars-&amp;gt;InsertValue(4,0);//第1个参数是points点的Id，第2个参数是该点的属性值
+    //将以上三部分数据组合成一个结构vtkUnstructureGrid
+    vtkSmartPointer&amp;lt;vtkUnstructuredGrid&amp;gt; aGrid=vtkSmartPointer&amp;lt;vtkUnstructuredGrid&amp;gt;::New();
+    aGrid-&amp;gt;Allocate(1,1);
+    aGrid-&amp;gt;SetPoints(points);
+    aGrid-&amp;gt;GetPointData()-&amp;gt;SetScalars(pointsScalars);
+    aGrid-&amp;gt;InsertNextCell(polyVertex-&amp;gt;GetCellType(),polyVertex-&amp;gt;GetPointIds());
+
+    //设置映射器
+       vtkSmartPointer&amp;lt;vtkDataSetMapper&amp;gt; aMapper=vtkSmartPointer&amp;lt;vtkDataSetMapper&amp;gt;::New();
+       aMapper-&amp;gt;SetInputData(aGrid);
+       aMapper-&amp;gt;ScalarVisibilityOn();
+       vtkSmartPointer&amp;lt;vtkActor&amp;gt; anActor=vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+       anActor-&amp;gt;SetMapper(aMapper);
+       anActor-&amp;gt;GetProperty()-&amp;gt;SetRepresentationToPoints();
+       anActor-&amp;gt;GetProperty()-&amp;gt;SetDiffuseColor(1,0,0);
+       anActor-&amp;gt;GetProperty()-&amp;gt;SetPointSize(10);
+
+       render-&amp;gt;AddActor(anActor);
+}
+
+void MainWindow::createAxis()
+{
+  //几何数据
+  vtkSmartPointer&amp;lt;vtkPoints&amp;gt; points=vtkSmartPointer&amp;lt;vtkPoints&amp;gt;::New();
+  //    points-&amp;gt;SetNumberOfPoints(5);//此行可有可无
+  int index = 0;
+
+  int num = 16;
+  int total = num*3;
+  int half = num /2;
+  for (int n=0; n &amp;lt;num;n++) {
+    points-&amp;gt;InsertPoint(index++,n-half,0,0);
+    points-&amp;gt;InsertPoint(index++,0,n-half,0);
+    points-&amp;gt;InsertPoint(index++,0,0,n-half);
+  }
+
+  //拓扑数据
+  vtkSmartPointer&amp;lt;vtkPolyVertex&amp;gt;polyVertex=vtkSmartPointer&amp;lt;vtkPolyVertex&amp;gt;::New();
+  polyVertex-&amp;gt;GetPointIds()-&amp;gt;SetNumberOfIds(total);//必须设置Id个数，否则可以编译，不能运行
+
+  for (int n=0; n &amp;lt;total;n++) {
+    polyVertex-&amp;gt;GetPointIds()-&amp;gt;SetId(n,n);//第一个参数是几何point的ID号，第2个参数是拓扑中的Id号
+  }
+
+  //属性数据
+  vtkSmartPointer&amp;lt;vtkFloatArray&amp;gt;pointsScalars=vtkSmartPointer&amp;lt;vtkFloatArray&amp;gt;::New();
+  pointsScalars-&amp;gt;SetNumberOfTuples(total);//此行可有可无
+  for (int n=0; n &amp;lt;total;n++) {
+    pointsScalars-&amp;gt;InsertValue(n,0);//第1个参数是points点的Id，第2个参数是该点的属性值
+  }
+
+
+
+  //将以上三部分数据组合成一个结构vtkUnstructureGrid
+  vtkSmartPointer&amp;lt;vtkUnstructuredGrid&amp;gt; aGrid=vtkSmartPointer&amp;lt;vtkUnstructuredGrid&amp;gt;::New();
+  aGrid-&amp;gt;Allocate(1,1);
+  aGrid-&amp;gt;SetPoints(points);
+  aGrid-&amp;gt;GetPointData()-&amp;gt;SetScalars(pointsScalars);
+  aGrid-&amp;gt;InsertNextCell(polyVertex-&amp;gt;GetCellType(),polyVertex-&amp;gt;GetPointIds());
+
+  //设置映射器
+  vtkSmartPointer&amp;lt;vtkDataSetMapper&amp;gt; aMapper=vtkSmartPointer&amp;lt;vtkDataSetMapper&amp;gt;::New();
+  aMapper-&amp;gt;SetInputData(aGrid);
+  aMapper-&amp;gt;ScalarVisibilityOn();
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt; anActor=vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+  anActor-&amp;gt;SetMapper(aMapper);
+  anActor-&amp;gt;GetProperty()-&amp;gt;SetRepresentationToPoints();
+  anActor-&amp;gt;GetProperty()-&amp;gt;SetDiffuseColor(1,0,0);
+  anActor-&amp;gt;GetProperty()-&amp;gt;SetPointSize(10);
+
+  render-&amp;gt;AddActor(anActor);
+
+}
+
+
+
+
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; MainWindow::createCylinder(float x,float y,float z)
+{
+  vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt; cylindeSource = vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;:: New();
+  cylindeSource-&amp;gt;SetCenter(x,y,z);
+  cylindeSource-&amp;gt;SetHeight(1);
+  cylindeSource-&amp;gt;SetRadius(0.1);
+
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; dataMap = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+
+  dataMap-&amp;gt;SetInputConnection( cylindeSource-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt; act = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+  act-&amp;gt;SetMapper(dataMap);
+
+
+  //set color
+  auto r = vtkMath::Random(.4, 1.0);
+  auto g = vtkMath::Random(.4, 1.0);
+  auto b = vtkMath::Random(.4, 1.0);
+  act-&amp;gt;GetProperty()-&amp;gt;SetDiffuseColor(r, g, b);
+
+  //other
+  act-&amp;gt;GetProperty()-&amp;gt;SetDiffuse(.8);
+  act-&amp;gt;GetProperty()-&amp;gt;SetSpecular(.5);
+  act-&amp;gt;GetProperty()-&amp;gt;SetSpecularColor(1.0,1.0,1.0);
+  act-&amp;gt;GetProperty()-&amp;gt;SetSpecularPower(30.0);
+
+
+  vtkSmartPointer&amp;lt;vtkAssembly&amp;gt; ass = vtkSmartPointer&amp;lt;vtkAssembly&amp;gt;::New() ;
+
+  ltAssembly &amp;lt;&amp;lt; ass;
+  auto c = cylindeSource-&amp;gt;GetCenter();
+  ass-&amp;gt;AddPart(act);//this can be multiple
+  ass-&amp;gt;SetOrigin(c[0],c[1],c[2]);
+  render-&amp;gt;AddActor(ass);
+
+  return act;
+}
+
+
+
+vtkSmartPointer&amp;lt;vtkActor&amp;gt; MainWindow::createCylinder(float x,float y,float z,float mx, float my, float mz,float angle)
+{
+  vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt; cylindeSource = vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;:: New();
+  cylindeSource-&amp;gt;SetCenter(x,y,z);
+  cylindeSource-&amp;gt;SetHeight(1);
+  cylindeSource-&amp;gt;SetRadius(0.1);
+
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; dataMap = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+
+  dataMap-&amp;gt;SetInputConnection( cylindeSource-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt; act = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+  act-&amp;gt;SetMapper(dataMap);
+
+  vtkSmartPointer&amp;lt;vtkTransform&amp;gt; transform = vtkSmartPointer&amp;lt;vtkTransform&amp;gt;::New();
+  transform-&amp;gt;RotateWXYZ(angle, 0, 0, 1);
+  transform-&amp;gt;Translate(mx,my,mz);
+  vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt; transformFilter =vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt;::New();
+
+  transformFilter-&amp;gt;SetTransform(transform);
+  transformFilter-&amp;gt;SetInputConnection(cylindeSource-&amp;gt;GetOutputPort());
+  transformFilter-&amp;gt;Update();
+
+  act-&amp;gt;SetUserTransform(transform);
+  //render-&amp;gt;AddActor(act);
+  return act;
+}
+void MainWindow::on_actionRY1_triggered()
+{
+  qDebug() &amp;lt;&amp;lt; &quot;RY1&quot;;
+  ltAssembly[comBox-&amp;gt;currentIndex()]-&amp;gt;RotateZ(45);
+  renWin-&amp;gt;Render();
+  //update();
+}
+
+void MainWindow::on_actionRY2_triggered()
+{
+  qDebug() &amp;lt;&amp;lt; &quot;RY2&quot;;
+  ltAssembly[comBox-&amp;gt;currentIndex()]-&amp;gt;RotateZ(45);
+  renWin-&amp;gt;Render();
+}
+void MainWindow::on_actionMX1_triggered()
+{
+  qDebug() &amp;lt;&amp;lt; &quot;RY1&quot;;
+  //ltAssembly[comBox-&amp;gt;currentIndex()]-&amp;gt;
+  renWin-&amp;gt;Render();
+}
+
+void MainWindow::on_actionMX2_triggered()
+{
+
+
+}
+
+void MainWindow::on_mv_valueChanged(int value)
+{
+  qDebug() &amp;lt;&amp;lt; __FUNCTION__ &amp;lt;&amp;lt; value;
+  vtkSmartPointer&amp;lt;vtkTransform&amp;gt; transform = vtkSmartPointer&amp;lt;vtkTransform&amp;gt;::New();
+
+  int x = ui-&amp;gt;horizontalSlider-&amp;gt;value();
+  int y = ui-&amp;gt;horizontalSlider_2-&amp;gt;value();
+  int z = ui-&amp;gt;horizontalSlider_3-&amp;gt;value();
+  transform-&amp;gt;Translate(x,y,z);
+  transform-&amp;gt;RotateWXYZ(90, 0, 0, 1);
+  vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt; transformFilter =
+      vtkSmartPointer&amp;lt;vtkTransformPolyDataFilter&amp;gt;::New();
+
+  transformFilter-&amp;gt;SetTransform(transform);
+  transformFilter-&amp;gt;SetInputConnection(header.getSource()-&amp;gt;GetOutputPort());
+  transformFilter-&amp;gt;Update();
+  header.getActor()-&amp;gt;SetUserTransform(transform);
+  renWin-&amp;gt;Render();
+}
+
+void MainWindow:: on_rotate_valueChanged(int value)
+{
+  qDebug() &amp;lt;&amp;lt; __FUNCTION__ &amp;lt;&amp;lt; value;
+  render-&amp;gt;GetActiveCamera()-&amp;gt;SetPosition (0, 0, value);//设视角位置
+  renWin-&amp;gt;Render();
+}
+
+void MainWindow::on_btn1_clicked()
+{
+  render-&amp;gt;GetActiveCamera()-&amp;gt;SetViewUp(0, 1 ,0 );
+  render-&amp;gt;GetActiveCamera()-&amp;gt;Azimuth(180);
+  renWin-&amp;gt;Render();
+}
+
+void MainWindow::on_btn2_clicked()
+{
+  render-&amp;gt;GetActiveCamera()-&amp;gt;SetViewUp(0, -1 ,0 );
+  render-&amp;gt;GetActiveCamera()-&amp;gt;Azimuth(-180);
+  renWin-&amp;gt;Render();
+}
+
+void MainWindow::on_btn3_clicked()
+{
+  double n = -90.0f;
+  render-&amp;gt;GetActiveCamera()-&amp;gt;Roll(n);
+  renWin-&amp;gt;Render();
+}
+
+void MainWindow::on_btn4_clicked()
+{
+  render-&amp;gt;GetActiveCamera()-&amp;gt;SetViewAngle( render-&amp;gt;GetActiveCamera()-&amp;gt;GetViewAngle()+40);
+  renWin-&amp;gt;Render();
+}
+
+void MainWindow::on_btn9_clicked()
+{
+  render-&amp;gt;ResetCamera();
+  renWin-&amp;gt;Render();
+}
+
+
+void MainWindow::createCube()
+{
+
+}
+
+void MainWindow::textureToCube()
+{
+  // Read JPG image
+  vtkSmartPointer&amp;lt;vtkJPEGReader&amp;gt; JPEGReader = vtkSmartPointer&amp;lt;vtkJPEGReader&amp;gt;::New();
+  JPEGReader-&amp;gt;SetFileName(&quot;/Users/rong/work/bb.jpeg&quot;);
+  JPEGReader-&amp;gt;Update();
+
+
+  vtkSmartPointer&amp;lt;vtkTexture&amp;gt; texture1 = vtkSmartPointer&amp;lt;vtkTexture&amp;gt;::New();
+  texture1-&amp;gt;SetInputConnection(JPEGReader-&amp;gt;GetOutputPort());
+
+
+  // 设置立方体代码：
+  // Setup cube
+  vtkSmartPointer&amp;lt;vtkCubeSource&amp;gt; cubeSource = vtkSmartPointer&amp;lt;vtkCubeSource&amp;gt;::New();
+  cubeSource-&amp;gt;Update();
+  vtkSmartPointer&amp;lt;vtkTextureMapToPlane&amp;gt; cubeMapper = vtkSmartPointer&amp;lt;vtkTextureMapToPlane&amp;gt;::New();
+  cubeMapper-&amp;gt;SetInputConnection(cubeSource-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; mapper = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+  mapper-&amp;gt;SetInputConnection(cubeMapper-&amp;gt;GetOutputPort());
+
+
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt; cubeActor = vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+  cubeActor-&amp;gt;SetMapper(mapper);
+  cubeActor-&amp;gt;GetProperty()-&amp;gt;SetDiffuseColor(.3, .6, .4);
+
+
+  cubeActor-&amp;gt;SetTexture(texture1);
+
+//# Generate a cube
+//cube = vtk.vtkCubeSource()
+
+//# Read the image data from a file
+//reader = vtk.vtkJPEGReader()
+//reader.SetFileName(&quot;yourimage.jpg&quot;)
+
+//# Create texture object
+//texture = vtk.vtkTexture()
+//texture.SetInputConnection(reader.GetOutputPort())
+
+//#Map texture coordinates
+//map_to_plane = vtk.vtkTextureMapToPlane()
+//map_to_plane.SetInputConnection(cube.GetOutputPort())
+
+//# Create mapper and set the mapped texture as input
+//mapper = vtk.vtkPolyDataMapper()
+//mapper.SetInputConnection(map_to_plane.GetOutputPort())
+
+//# Create actor and set the mapper and the texture
+//actor = vtk.vtkActor()
+//actor.SetMapper(mapper)
+//actor.SetTexture(texture)
+
+  render-&amp;gt;AddActor(cubeActor);
+}
+
+void MainWindow::setBodyTexture()
+{
+  // Read JPG image
+//  vtkSmartPointer&amp;lt;vtkJPEGReader&amp;gt; JPEGReader = vtkSmartPointer&amp;lt;vtkJPEGReader&amp;gt;::New();
+//  JPEGReader-&amp;gt;SetFileName(&quot;/Users/rong/work/bb.jpeg&quot;);
+//  JPEGReader-&amp;gt;Update();
+
+
+  vtkSmartPointer&amp;lt;vtkBMPReader&amp;gt; texReader =
+      vtkSmartPointer&amp;lt;vtkBMPReader&amp;gt;::New();//vtkJPEGReader
+  texReader-&amp;gt;SetFileName(&quot;/Users/rong/dfnet/suit.bmp&quot;);
+
+
+  vtkSmartPointer&amp;lt;vtkTexture&amp;gt; texture1 = vtkSmartPointer&amp;lt;vtkTexture&amp;gt;::New();
+  texture1-&amp;gt;SetInputConnection(texReader-&amp;gt;GetOutputPort());
+
+
+  // 设置立方体代码：
+  // Setup cube
+  vtkSmartPointer&amp;lt;vtkCubeSource&amp;gt; cubeSource = body.getSource();//vtkSmartPointer&amp;lt;vtkCubeSource&amp;gt;::New();
+  cubeSource-&amp;gt;Update();
+  vtkSmartPointer&amp;lt;vtkTextureMapToPlane&amp;gt; cubeMapper = vtkSmartPointer&amp;lt;vtkTextureMapToPlane&amp;gt;::New();
+  cubeMapper-&amp;gt;SetInputConnection(cubeSource-&amp;gt;GetOutputPort());
+
+
+
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; mapper = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+  mapper-&amp;gt;SetInputConnection(cubeMapper-&amp;gt;GetOutputPort());
+
+
+  vtkSmartPointer&amp;lt;vtkActor&amp;gt; cubeActor = body.getActor();//vtkSmartPointer&amp;lt;vtkActor&amp;gt;::New();
+  cubeActor-&amp;gt;SetMapper(mapper);
+  cubeActor-&amp;gt;GetProperty()-&amp;gt;SetDiffuseColor(.3, .6, .4);
+
+
+  cubeActor-&amp;gt;SetTexture(texture1);
+}
+
+
+void MainWindow::setHeadTexture()
+{
+  // Read JPG image
+  vtkSmartPointer&amp;lt;vtkJPEGReader&amp;gt; JPEGReader = vtkSmartPointer&amp;lt;vtkJPEGReader&amp;gt;::New();
+  JPEGReader-&amp;gt;SetFileName(&quot;/Users/rong/dfnet/head.jpg&quot;);
+  JPEGReader-&amp;gt;Update();
+
+  vtkSmartPointer&amp;lt;vtkTexture&amp;gt; texture1 = vtkSmartPointer&amp;lt;vtkTexture&amp;gt;::New();
+  texture1-&amp;gt;SetInputConnection(JPEGReader-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkTextureMapToPlane&amp;gt; cubeMapper = vtkSmartPointer&amp;lt;vtkTextureMapToPlane&amp;gt;::New();
+  cubeMapper-&amp;gt;SetInputConnection(header.getSource()-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; mapper = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+  mapper-&amp;gt;SetInputConnection(cubeMapper-&amp;gt;GetOutputPort());
+
+
+  header.getActor()-&amp;gt;SetMapper(mapper);
+  header.getActor()-&amp;gt;GetProperty()-&amp;gt;SetDiffuseColor(.3, .6, .4);
+
+  header.getActor()-&amp;gt;SetTexture(texture1);
+
+}
+
+void MainWindow::setCylinderTexture(MyVTKObject&amp;lt;vtkSmartPointer&amp;lt;vtkCylinderSource&amp;gt;&amp;gt; obj)
+{
+  // Read JPG image
+  vtkSmartPointer&amp;lt;vtkJPEGReader&amp;gt; JPEGReader = vtkSmartPointer&amp;lt;vtkJPEGReader&amp;gt;::New();
+  JPEGReader-&amp;gt;SetFileName(&quot;/Users/rong/work/bb.jpeg&quot;);
+  JPEGReader-&amp;gt;Update();
+
+  vtkSmartPointer&amp;lt;vtkTexture&amp;gt; texture1 = vtkSmartPointer&amp;lt;vtkTexture&amp;gt;::New();
+  texture1-&amp;gt;SetInputConnection(JPEGReader-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkTextureMapToPlane&amp;gt; cubeMapper = vtkSmartPointer&amp;lt;vtkTextureMapToPlane&amp;gt;::New();
+  cubeMapper-&amp;gt;SetInputConnection(obj.getSource()-&amp;gt;GetOutputPort());
+
+  vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt; mapper = vtkSmartPointer&amp;lt;vtkPolyDataMapper&amp;gt;::New();
+  mapper-&amp;gt;SetInputConnection(cubeMapper-&amp;gt;GetOutputPort());
+
+
+  obj.getActor()-&amp;gt;SetMapper(mapper);
+  obj.getActor()-&amp;gt;GetProperty()-&amp;gt;SetDiffuseColor(.3, .6, .4);
+
+  obj.getActor()-&amp;gt;SetTexture(texture1);
+
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
 				<pubDate>Wed, 08 Jan 2020 18:48:05 -0500</pubDate>

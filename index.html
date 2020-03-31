@@ -1,59 +1,24 @@
 ---
 layout: default
 ---
-{% assign trans = site.data.values[site.lan] %}
 
-
-
-<div>
-
-
-  <h1 align= center>Hello I am Ron</h1>
-  <h4 align= center >I am a senior software developer.</h4>
-
-  <table align= center>
-    <tr>
-      <td width="150" align= center><img src="assets/img/fast.png" width="64" height="64"> </td><td width="150" align= center><img src="assets/img/fast.png" width="64" height="64"> </td> 
-      <td width="150" align= center><img src="assets/img/fast.png" width="64" height="64"> </td> <td width="150" align= center><img src="assets/img/fast.png" width="64" height="64"> </td>
-    </tr>
-    <tr>
-      <td align= center> Fast</td> <td align= center>Responsive</td> <td align= center>Intuitive</td> <td align= center>Dynamic</td>
-    </tr>
-    <tr>
-      <td><br>Fast understand users and quickly implementation, my highest priority.</td>
-      <td><br>Reliable, Flexible and Safe software is my key aim.</td> 
-      <td><br>Strong preference for easy to use, intuitive UX/UI.</td> 
-      <td><br>Good design, Best Architecture lead the software can cath up the changes</td>
-    </tr>
-  </table>
- <br>
-<div width= "60%">
-
- 
-<div class="container">
-  <div class="skills html" style="width: 80%; height:30px; background-color: #4CAF50;color: rgb(247, 238, 238);">C++ 90%</div>
-</div>
-
-
-<div class="container">
-  <div class="skills css" style="width: 75%; height:30px;background-color: rgb(84, 74, 223);color: rgb(247, 238, 238);"> Qt 85%</div>
-</div>
-
-
-<div class="container">
-  <div class="skills js" style="width: 70%; height:30px;background-color: rgb(88, 162, 204); color: rgb(247, 238, 238);"> VTK 80%</div>
-</div>
-
-
-<div class="container">
-  <div class="skills php" style="width: 65%; height:30px;background-color: rgb(216, 79, 235);color: rgb(247, 238, 238);">Python 75%</div>
-</div>
-
-<div class="container">
-  <div class="skills php" style="width: 60%; height:30px;background-color: rgb(51, 66, 207);color: rgb(247, 238, 238);">Flutter 65%</div>
-</div>
-
-</div>
- <img src="assets/img/foot.png">
-
+<div class="well article">
+{% assign sortedtags = site.tags | sort %}
+{% for tag in sortedtags %}
+    <h2><a href ={{ tag[0] | capitalize }} >  {{ tag[0] | capitalize }} </a></h2>
+    <ul>
+        {% assign pages_list = tag[1] %}
+        {% for node in pages_list limit: 5%}
+            {% if node.title != null %}
+            {% if group == null or group == node.group %}
+                <li><span class="post-date">
+                    {% assign date_format = site.date_format.tag %}
+                    {{ node.date | date: date_format }} </span></span><a href="{{ site.baseurl}}{{ node.url }}"> {{ node.title }}</a></li>
+            {% endif %}
+            {% endif %}
+        {% endfor %}
+        <a href ={{ tag[0] | capitalize }}.html >  More... </a>
+        {% assign pages_list = nil %}
+    </ul>
+{% endfor %}    
 </div>
